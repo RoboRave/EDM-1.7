@@ -1,0 +1,13 @@
+[
+{
+  "modid": "Extra_Diamonds_Mod",
+  "name": "extra_diamods_mod",
+  "description": "Example placeholder mod.",
+  "version": "3.00",
+  "mcversion": "1.6.4",
+  "authors": ["ExampleDude"],
+  "credits": "The Forge and FML guys, for making this example",
+  "screenshots": [],
+  "dependencies": []
+}
+]

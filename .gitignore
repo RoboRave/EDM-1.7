@@ -1,0 +1,19 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+.classpath
+.project
+# MC/Forge Directories #
+.gradle/
+.settings/
+build/
+eclipse/
+gradle/
+bin/
+
+# MC/Forge files #
+setup.bat
+build.bat
