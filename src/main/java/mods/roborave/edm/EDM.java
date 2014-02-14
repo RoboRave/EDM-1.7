@@ -1,6 +1,8 @@
 package mods.roborave.edm;
 import java.util.Arrays;
 
+import mods.roborave.edm.blocks.BlockFrozenDiamond;
+import mods.roborave.edm.client.DoubleRenderClientProxy;
 import mods.roborave.edm.helper.LocalizationHandler;
 import mods.roborave.edm.helper.LogHandler;
 import mods.roborave.edm.init.Blocks;
@@ -21,8 +23,9 @@ public class EDM {
 	public static LogHandler log;
 	
 	@Instance(Strings.MODID)
-	public EDM Instance;
+	public static EDM Instance;
 	
+	public Strings lib;
 	/**
 	 * Loads before
 	 * @param PreEvent
@@ -41,6 +44,7 @@ public class EDM {
 		LocalizationHandler.init();
 		Blocks.init();
 		Items.init();
+		
 	}
 	
 	/**
@@ -50,7 +54,8 @@ public class EDM {
 	@EventHandler
 	public static void load(FMLInitializationEvent event)
 	{
-		
+		new BlockFrozenDiamond("frozen Diamond");
+		DoubleRenderClientProxy.setCustomRenderers();
 	}
 	
 	/**

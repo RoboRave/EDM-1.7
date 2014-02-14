@@ -8,10 +8,12 @@ import mods.roborave.edm.items.ItemAxeMain;
 import mods.roborave.edm.items.ItemCore;
 import mods.roborave.edm.items.ItemPickaxeMain;
 import mods.roborave.edm.items.ItemSpadeMain;
+import mods.roborave.edm.items.ItemSpecial;
 import mods.roborave.edm.items.ItemSwordMain;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.EnumChatFormatting;
 
 public class Items {
 	private static boolean isInitialized = false;
@@ -29,7 +31,8 @@ public class Items {
 		{
 			EDM.log.info("Initializing Items");
 			//TODO Items
-			new ItemCore("Item_Black_Diamond");
+			
+			new ItemSpecial("Item_Black_Diamond","hi").onUse(Blocks.getBlock("Black_diamond_Block"));
 			new ItemCore("Item_Blue_Diamond");
 			new ItemCore("Item_Gold_Diamond");
 			new ItemCore("Item_Gray_Diamond");
