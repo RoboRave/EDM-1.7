@@ -1,15 +1,11 @@
 package mods.roborave.edm;
-import java.net.URL;
 import java.util.Arrays;
-
-import mods.mud.ModUpdateDetector;
 import mods.roborave.edm.helper.LocalizationHandler;
 import mods.roborave.edm.helper.LogHandler;
 import mods.roborave.edm.init.Blocks;
 import mods.roborave.edm.init.Items;
 import mods.roborave.edm.lib.Strings;
 import cpw.mods.fml.common.DummyModContainer;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -47,15 +43,6 @@ public class EDM extends DummyModContainer{
 		Blocks.init();
 		Items.init();
 		Blocks.TestBlocks();
-            try {
-                ModUpdateDetector.registerMod(
-                        FMLCommonHandler.instance().findContainerFor("extra_diamonds_mod"),
-                        new URL("https://raw.github.com/RoboRave/EDM 1.7/master/battlegear_update.xml"),
-                        new URL("https://raw.github.com/Mine-and-blade-admin/Battlegear2/master/changelog.md")
-                );
-            } catch (Throwable e) {
-                e.printStackTrace();
-            }
     }
 	
 	/**
