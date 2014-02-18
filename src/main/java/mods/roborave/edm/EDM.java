@@ -1,13 +1,15 @@
 package mods.roborave.edm;
+import java.net.URL;
 import java.util.Arrays;
 
-import mods.roborave.edm.blocks.BlockFrozenDiamond;
-import mods.roborave.edm.client.DoubleRenderClientProxy;
+import mods.mud.ModUpdateDetector;
 import mods.roborave.edm.helper.LocalizationHandler;
 import mods.roborave.edm.helper.LogHandler;
 import mods.roborave.edm.init.Blocks;
 import mods.roborave.edm.init.Items;
 import mods.roborave.edm.lib.Strings;
+import cpw.mods.fml.common.DummyModContainer;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -18,7 +20,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Strings.MODID, name = Strings.name, version = Strings.version,canBeDeactivated=true)
 
-public class EDM {
+public class EDM extends DummyModContainer{
 	
 	public static LogHandler log;
 	
@@ -44,8 +46,17 @@ public class EDM {
 		LocalizationHandler.init();
 		Blocks.init();
 		Items.init();
-		
-	}
+		Blocks.TestBlocks();
+            try {
+                ModUpdateDetector.registerMod(
+                        FMLCommonHandler.instance().findContainerFor("extra_diamonds_mod"),
+                        new URL("https://raw.github.com/RoboRave/EDM 1.7/master/battlegear_update.xml"),
+                        new URL("https://raw.github.com/Mine-and-blade-admin/Battlegear2/master/changelog.md")
+                );
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+    }
 	
 	/**
 	 * Loads during
@@ -54,8 +65,7 @@ public class EDM {
 	@EventHandler
 	public static void load(FMLInitializationEvent event)
 	{
-		new BlockFrozenDiamond("frozen Diamond");
-		DoubleRenderClientProxy.setCustomRenderers();
+		
 	}
 	
 	/**

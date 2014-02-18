@@ -20,7 +20,8 @@ public class ItemSwordMain extends ItemCore
 {
     private float field_150934_a;
     private final Item.ToolMaterial field_150933_b;
-    private static final String __OBFID = "CL_00000072";
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00000072";
 
     public ItemSwordMain(Item.ToolMaterial p_i45356_1_, String itemname)
     {
@@ -136,7 +137,8 @@ public class ItemSwordMain extends ItemCore
     /**
      * Gets a map of item attribute modifiers, used by ItemSword to increase hit damage.
      */
-    public Multimap getItemAttributeModifiers()
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public Multimap getItemAttributeModifiers()
     {
         Multimap multimap = super.getItemAttributeModifiers();
         multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifier", (double)this.field_150934_a, 0));

@@ -4,16 +4,14 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemSpecial extends ItemCore{
 
-	@SuppressWarnings("unused")
+	
 	private String message;
 	private static Block block;
 	public ItemSpecial(String itemName, String message) {
@@ -24,7 +22,7 @@ public class ItemSpecial extends ItemCore{
 	}
 	@SideOnly(Side.CLIENT)
 	@SuppressWarnings("unchecked")
-	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List ,boolean par4)
+	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, @SuppressWarnings("rawtypes") List par3List ,boolean par4)
 	{
 		par3List.add(message);
 	}

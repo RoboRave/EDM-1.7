@@ -1,0 +1,9 @@
+<mod modid="battlegear2">
+	<mcVersion version="1.6.4">
+	<release type="release" version="3.0.0"
+                 url="http://minecraft.curseforge.com/mc-mods/mb-battlegear-2/"
+                 download="https://raw2.github.com/RoboRave/EDM-1.7/master/releases/Edm-Pre-3.00.jar"
+                 md5="da2797fce1d4b509c2c3482fb69bc17e"
+                />
+    </mcVersion>
+</mod>

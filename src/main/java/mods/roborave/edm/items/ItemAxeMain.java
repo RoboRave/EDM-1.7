@@ -10,8 +10,10 @@ import net.minecraft.item.ItemStack;
 
 public class ItemAxeMain extends ItemToolMain
 {
-    private static final Set field_150917_c = Sets.newHashSet(new Block[] {Blocks.planks, Blocks.bookshelf, Blocks.log, Blocks.log2, Blocks.chest, Blocks.pumpkin, Blocks.lit_pumpkin});
-    private static final String __OBFID = "CL_00001770";
+    @SuppressWarnings("rawtypes")
+	private static final Set field_150917_c = Sets.newHashSet(new Block[] {Blocks.planks, Blocks.bookshelf, Blocks.log, Blocks.log2, Blocks.chest, Blocks.pumpkin, Blocks.lit_pumpkin});
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00001770";
 
     public ItemAxeMain(Item.ToolMaterial p_i45327_1_, String itemname)
     {

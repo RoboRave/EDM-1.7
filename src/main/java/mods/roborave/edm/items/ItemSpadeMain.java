@@ -8,8 +8,10 @@ import net.minecraft.item.Item;
 
 public class ItemSpadeMain extends ItemToolMain
 {
-    private static final Set field_150916_c = Sets.newHashSet(new Block[] {Blocks.grass, Blocks.dirt, Blocks.sand, Blocks.gravel, Blocks.snow_layer, Blocks.snow, Blocks.clay, Blocks.farmland, Blocks.soul_sand, Blocks.mycelium});
-    private static final String __OBFID = "CL_00000063";
+    @SuppressWarnings("rawtypes")
+	private static final Set field_150916_c = Sets.newHashSet(new Block[] {Blocks.grass, Blocks.dirt, Blocks.sand, Blocks.gravel, Blocks.snow_layer, Blocks.snow, Blocks.clay, Blocks.farmland, Blocks.soul_sand, Blocks.mycelium});
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00000063";
 
     public ItemSpadeMain(Item.ToolMaterial p_i45353_1_, String itemname)
     {

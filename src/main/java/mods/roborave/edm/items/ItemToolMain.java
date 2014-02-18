@@ -17,7 +17,8 @@ import net.minecraftforge.common.ForgeHooks;
 
 public class ItemToolMain extends ItemCore
 {
-    private Set field_150914_c;
+    @SuppressWarnings("rawtypes")
+	private Set field_150914_c;
     protected float efficiencyOnProperMaterial = 4.0F;
     /**
      * Damage versus entities.
@@ -27,9 +28,10 @@ public class ItemToolMain extends ItemCore
      * The material this tool is made from.
      */
     protected Item.ToolMaterial toolMaterial;
-    private static final String __OBFID = "CL_00000019";
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00000019";
 
-    protected ItemToolMain(float p_i45333_1_, Item.ToolMaterial p_i45333_2_, Set p_i45333_3_, String itemname)
+    protected ItemToolMain(float p_i45333_1_, Item.ToolMaterial p_i45333_2_, @SuppressWarnings("rawtypes") Set p_i45333_3_, String itemname)
     {
     	super(itemname);
         this.toolMaterial = p_i45333_2_;
@@ -119,7 +121,8 @@ public class ItemToolMain extends ItemCore
     /**
      * Gets a map of item attribute modifiers, used by ItemSword to increase hit damage.
      */
-    public Multimap getItemAttributeModifiers()
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public Multimap getItemAttributeModifiers()
     {
         Multimap multimap = super.getItemAttributeModifiers();
         multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.damageVsEntity, 0));

@@ -1,42 +1,51 @@
 package mods.roborave.edm.items;
- 
+
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
  
 public class ItemBlockSpecial extends ItemBlock
 {
-    public ItemBlockSpecial(Block block)
+	@SideOnly(Side.CLIENT)
+    private IIcon field_150938_b;
+	
+	 public final Block field_150939_b;
+	@SuppressWarnings("unused")
+	private String message;
+    public ItemBlockSpecial(Block block,String message)
     {
         super(block);
-        setHasSubtypes(true);
+        this.field_150939_b = block;
+        this.message= message;
+        this.setCreativeTab(CreativeTabs.tabBlock);
     }
- 
-    @Override
-    public String getUnlocalizedName(ItemStack itemstack)
+    public String getUnlocalizedName(ItemStack par1ItemStack)
     {
-        String name = "";
-        switch (itemstack.getItemDamage())
-        {
-        case 0:
-        {
-            name = "world";
-            break;
-        }
-        case 1:
-        {
-            name = "nether";
-            break;
-        }
-        default:
-            name = "broken";
-        }
-        return getUnlocalizedName() + "." + name;
+        return this.field_150939_a.getUnlocalizedName();
     }
  
+    
     @Override
     public int getMetadata(int par1)
     {
         return par1;
+    }
+
+
+   
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IIconRegister par1IconRegister)
+    {
+        String s = this.field_150939_a.getItemIconName();
+
+        if (s != null)
+        {
+            this.field_150938_b = par1IconRegister.registerIcon(s);
+        }
     }
 }

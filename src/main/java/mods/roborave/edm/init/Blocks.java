@@ -1,17 +1,11 @@
 package mods.roborave.edm.init;
 
 import java.util.HashMap;
-
-import cpw.mods.fml.common.registry.GameRegistry;
-
 import mods.roborave.edm.EDM;
-import mods.roborave.edm.blocks.Block2;
-import mods.roborave.edm.blocks.BlockCore;
+import mods.roborave.edm.blocks.BlockCompressed;
 import mods.roborave.edm.blocks.BlockExtended;
-import mods.roborave.edm.blocks.BlockFrozenDiamond;
-import mods.roborave.edm.blocks.BlockSpecial;
+import mods.roborave.edm.blocks.BlockWalkable;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 
 public class Blocks 
 {
@@ -20,7 +14,6 @@ public class Blocks
 	@SuppressWarnings("rawtypes")
 	public static HashMap blockList = new HashMap();
 
-	public static Block BlockFrozenDiamond= (Block) Blocks.blockList.get("wip");
 	@SuppressWarnings("static-access")
 	public static void init() 
 	{
@@ -31,22 +24,26 @@ public class Blocks
 		}
 		
 		EDM.log.info("Initializing Blocks");
-		new BlockFrozenDiamond("wip").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock, "Black_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"Blue_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock, "Gold_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"Gray_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"Green_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"Orange_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"Pink_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"Purple_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"Red_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"White_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCore(Material.rock,"Yellow_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		
+		new BlockCompressed("Black_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Blue_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Gold_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Gray_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Green_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Orange_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Pink_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Purple_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Red_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("White_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockCompressed("Yellow_diamond_Block").setHardness(2.0F).setResistance(5.0F);
+		new BlockExtended("wip");
+		new BlockWalkable("wip1").setBlockUnbreakable();
 		isInitialized = true;
 	}
 
+	public static void TestBlocks()
+	{
+		
+	}
 	public static Block getBlock(String blockName) 
 	{
 		try 
