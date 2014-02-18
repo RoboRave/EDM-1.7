@@ -9,3 +9,5 @@ tile.Pink_diamond_Block.name=Pink Diamond Block
 tile.Purple_diamond_Block.name=Purple Diamond Block
 tile.White_diamond_Block.name=White Diamond Block
 tile.Yellow_diamond_Block.name=Yellow Diamond Block
+message.outdated=%s is out of date! Please visit %s to get the latest version ( %s )
+message.uptodate=You are using the latest version of %s ( %s) so you don't need to updated it
