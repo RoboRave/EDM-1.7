@@ -1,9 +1,12 @@
 package mods.roborave.edm;
 import java.util.Arrays;
 
+import com.google.common.eventbus.Subscribe;
+
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentTranslation;
+import mods.roborave.command.EDMCommand;
 import mods.roborave.edm.Handler.EDMEventHandler;
 import mods.roborave.edm.chat.ChatMessageHandler;
 import mods.roborave.edm.helper.LocalizationHandler;
@@ -22,6 +25,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.server.FMLServerHandler;
 
 @Mod(modid = Strings.MODID, name = Strings.name, version = Strings.version,canBeDeactivated=true)
@@ -79,9 +84,10 @@ public class EDM extends DummyModContainer{
 		
 	}
 	@EventHandler
-	public void serverStarted(FMLServerStartedEvent event)
-	{
-		//Version.check("EDM", Strings.version, "http://www.minecraftforum.net/topic/2059368-");
-		//player.addChatComponentMessage(new ChatComponentTranslation("tile.bed.occupied", new Object[0]));
-	}
+	@Subscribe
+	 public void serverStarting(FMLServerStartingEvent evt)
+	 {
+		 evt.registerServerCommand(new EDMCommand(evt.getServer()));
+	 }
+	
 }

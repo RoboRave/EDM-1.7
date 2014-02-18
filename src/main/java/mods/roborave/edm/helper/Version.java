@@ -33,11 +33,11 @@ public class Version {
 
 			} else if (oldVersion == newVersion) {
 
-				EDM.Instance.player.addChatMessage(new ChatComponentTranslation("message.uptodate",ID,Version));
+				EDM.Instance.player.addChatComponentMessage(new ChatComponentTranslation("message.uptodate",ID,Version));
 
 			} else {
 
-				EDM.Instance.player.addChatMessage(new ChatComponentTranslation("[" + ID + "] Could not check the version of " + ModName + "!"));
+				EDM.Instance.player.addChatComponentMessage(new ChatComponentTranslation("[" + ID + "] Could not check the version of " + ModName + "!"));
 
 			}
 
