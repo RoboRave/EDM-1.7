@@ -1,4 +1,4 @@
-package mods.roborave.edm.items;
+package mods.roborave.edm.items.tools;
 
 import com.google.common.collect.Sets;
 import java.util.Set;

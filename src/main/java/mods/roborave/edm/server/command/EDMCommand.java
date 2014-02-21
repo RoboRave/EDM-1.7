@@ -1,35 +1,35 @@
-package mods.roborave.command;
+package mods.roborave.edm.server.command;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.text.DecimalFormat;
 
-import mods.roborave.edm.EDM;
-import mods.roborave.edm.helper.Version;
-import mods.roborave.edm.lib.Strings;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.EnumChatFormatting;
-import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.server.ForgeTimeTracker;
 
-public class EDMCommand extends CommandBase {
-
-	public String ID= "EDM";
-	private static String VersionUrl = "https://dl.dropboxusercontent.com/u/100336313/minecraft/mods/";
-    private MinecraftServer server;
-	private String Version="3";
+public class EDMCommand extends CommandBase
+{
+	@SuppressWarnings("unused")
+	private MinecraftServer server;
+	
+    private String Version="300";
+    
+    public String ID= "EDM";
+    
 	private String Url="http://www.minecraftforum.net/topic/2059368-";
+	
+	private static String VersionUrl = "https://dl.dropboxusercontent.com/u/100336313/minecraft/mods/";
 
     public EDMCommand(MinecraftServer server)
     {
         this.server = server;
     }
-    private static final DecimalFormat timeFormatter = new DecimalFormat("########0.000");
+    @SuppressWarnings("unused")
+	private static final DecimalFormat timeFormatter = new DecimalFormat("########0.000");
 
     @Override
     public String getCommandName()
@@ -59,7 +59,7 @@ public class EDMCommand extends CommandBase {
         {
             displayVersion(sender,args);
         }
-        else if ("help version".equals(args[0]))
+        else if ("help".equals(args[0]))
         {
             displayHelp(sender,args);
         }
@@ -80,26 +80,28 @@ public class EDMCommand extends CommandBase {
     		        String Result = in.readLine();
     		        in.close();
 
-    		        int newVersion = Integer.parseInt(Result.substring(0));
-    		        int oldVersion = Integer.parseInt(Version.substring(0));
+    		        int newVersion = Integer.parseInt(Result);
+    		        int oldVersion = Integer.parseInt(Version);
 
     				if (oldVersion < newVersion) {
 
-    					sender.addChatMessage(new ChatComponentTranslation("message.outdated",ID,Url,Version));
+    					sender.addChatMessage(new ChatComponentTranslation("message.outdated",ID,Url,Result));
 
     				} else if (oldVersion == newVersion) {
 
-    					sender.addChatMessage(new ChatComponentTranslation("message.uptodate",ID,Version));
+    					sender.addChatMessage(new ChatComponentTranslation("message.uptodate",ID,Result));
 
     				} else {
-
+    					
     					sender.addChatMessage(new ChatComponentTranslation("message.error.version",ID));
-
-    				}
-
-    			} catch (Exception e) {
-    				e.printStackTrace();
-    				sender.addChatMessage(new ChatComponentTranslation("message.error.version",ID));
+    					
+    					}
+    				
+    				} catch (Exception e) {
+    					
+    					e.printStackTrace();
+    					
+    					sender.addChatMessage(new ChatComponentTranslation("message.error.version",ID));
 
     			}
 
@@ -107,7 +109,7 @@ public class EDMCommand extends CommandBase {
     	
     	private void displayHelp(ICommandSender sender, String[] args)
     	{
-    		sender.addChatMessage(new ChatComponentTranslation(EnumChatFormatting.GREEN+"message.version.help",ID));
+    		sender.addChatMessage(new ChatComponentTranslation("message.version.help",ID));
     	}
     
     }

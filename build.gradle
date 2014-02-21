@@ -11,32 +11,114 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT'
+        classpath "net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT"
     }
 }
 
-apply plugin: 'forge'
+apply plugin: "forge"
 
-version = "3.0.0"
-group= "mods.roborave.edm" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "edm"
+ext.configFile = file "build.properties"
+
+configFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    ext.config = new ConfigSlurper().parse prop
+}
+
+ext.build = System.getenv().BUILD_NUMBER ?: "dev"
+
+group = "mods.roborave.edm"
+version = "${config.version.major}.${config.version.minor}.${config.version.micro}.${build}"
+archivesBaseName = "[${config.version.minecraft}]${config.mod.id}"
 
 minecraft {
-    version = "1.7.2-10.12.0.1027"
-    assetDir = "eclipse/assets"
+    version = "${config.version.minecraft}-${config.version.forge}"
+
+    if (!project.hasProperty("run_location"))
+        assetDir = "run/assets"
+    else
+        assetDir = run_location.replace("{modid}", config.mod.id).replace("{mcversion}", config.version.minecraft) + "assets"
 }
-processResources
-{
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+
+jar {
+    appendix = "universal"
+}
+
+processResources {
+    from (sourceSets.main.resources.srcDirs) {
+        include "mcmod.info"
+        include "version.properties"
+
+        expand (["modid": config.mod.id,
+            "version": version,
+            "mcversion": config.version.minecraft,
+            "forgeversion": config.version.forge
+        ])
     }
-        
-    // copy everything else, thats not the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+
+    from (sourceSets.main.resources.srcDirs) {
+        exclude "mcmod.info"
+        exclude "version.properties"
+    }
+}
+
+if (!project.hasProperty("keystore_location"))
+    ext.keystore_location = "."
+
+if (!project.hasProperty("keystore_alias"))
+    ext.keystore_alias = ""
+
+if (!project.hasProperty("keystore_password"))
+    ext.keystore_password = ""
+
+if (!project.hasProperty("release_location"))
+    ext.release_location = "."
+else
+    ext.release_location = release_location.replace("{modid}", config.mod.id).replace("{mcversion}", config.version.minecraft).replace("{version}", version)
+
+task signJar(dependsOn: "reobf") {
+    inputs.file jar.getArchivePath()
+    inputs.file keystore_location
+    inputs.property "keystore_alias", keystore_alias
+    inputs.property "keystore_password", keystore_password
+    outputs.file jar.getArchivePath()
+
+    onlyIf {
+        return keystore_location != "."
+    }
+
+    doLast {
+        ant.signjar(
+            destDir: jar.destinationDir,
+            jar: jar.getArchivePath(),
+            keystore: keystore_location,
+            alias: keystore_alias,
+            storepass: keystore_password
+        )
+    }
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    appendix = "universal"
+    classifier = "deobf"
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    appendix = "universal"
+    classifier = "src"
+}
+
+task release(dependsOn: ["sourceJar", "deobfJar", "signJar"], type: Copy) {
+    from project.tasks.jar.destinationDir
+    into project.file(project.release_location)
+
+    eachFile { file ->
+        logger.info "copying ${file}"
+    }
+
+    onlyIf {
+        return project.release_location != "."
     }
 }

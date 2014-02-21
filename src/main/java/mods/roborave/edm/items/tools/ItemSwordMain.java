@@ -1,8 +1,9 @@
-package mods.roborave.edm.items;
+package mods.roborave.edm.items.tools;
 
 import com.google.common.collect.Multimap;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mods.roborave.edm.items.ItemCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;

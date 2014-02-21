@@ -13,7 +13,7 @@ build/
 eclipse/
 gradle/
 bin/
-
+src/main/java/com/
 # MC/Forge files #
 setup.bat
 build.bat

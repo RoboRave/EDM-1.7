@@ -2,9 +2,11 @@ package mods.roborave.edm.items;
 
 import java.util.List;
 
+import mods.roborave.edm.lib.Strings;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,11 +14,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemSpecial extends ItemCore{
 
 	
-	private String message;
 	private static Block block;
 	public ItemSpecial(String itemName, String message) {
 		super(itemName);
-		this.message= message;
 		// TODO Auto-generated constructor stub
 	
 	}
@@ -24,7 +24,7 @@ public class ItemSpecial extends ItemCore{
 	@SuppressWarnings("unchecked")
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, @SuppressWarnings("rawtypes") List par3List ,boolean par4)
 	{
-		par3List.add(message);
+		par3List.add(StatCollector.translateToLocal(this.getUnlocalizedName()+".desc"));
 	}
 	
 	@SuppressWarnings("static-access")

@@ -1,9 +1,20 @@
 package mods.roborave.edm.client;
 
+import mods.roborave.creativetabs.MainTab;
+import mods.roborave.edm.EDM;
+import mods.roborave.edm.common.CommonProxy;
+import mods.roborave.edm.init.Armor;
+import mods.roborave.edm.init.Blocks;
+import mods.roborave.edm.init.Items;
+import mods.roborave.edm.interfaces.IProxy;
+import mods.roborave.edm.tick.VersionTicker;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
-public class ClientProxy 
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.common.FMLCommonHandler;
+public class ClientProxy extends CommonProxy implements IProxy
 {
 	public static Item.ToolMaterial Black=  EnumHelper.addToolMaterial("Black_D",3, 1500, 8.0F, 3.0F, 10);
     public static Item.ToolMaterial Blue=  EnumHelper.addToolMaterial("Blue_D",3, 2000, 10.0F, 5.0F, 15);
@@ -13,6 +24,48 @@ public class ClientProxy
 	public static ArmorMaterial Gray_Diamonds= EnumHelper.addArmorMaterial("Gray", 40, new int[] { 5, 10,8, 5 }, 20);
 	public static ArmorMaterial Green_Diamonds= EnumHelper.addArmorMaterial("Green", 45, new int[] { 7, 12,10,7 }, 25);
 	
+	@Override
+	public void loadMod() 
+	{
+		super.loadMod();
+		EDM.tabEDMBlock= new MainTab("EDM:Blocks");
+	}
+	
+	@Override
+	public void load()
+	{
+		super.load();
+	}
+	
+	@Override
+	public void PreInit()
+	{
+		super.PreInit();
+	}
+	
+	@Override
+	public void Init()
+	{
+		super.Init();
+	}
+	
+	@Override
+	public void PostInit() 
+	{
+		super.PostInit();
+	}
+	@Override
+    public World getClientWorld()
+    {
+        return FMLClientHandler.instance().getClient().theWorld;
+    }
+	
+	@Override
+	public void registerTickers() {
+		super.registerTickers();
+
+		FMLCommonHandler.instance().bus().register(new VersionTicker());
+	}
 	
 	
 }

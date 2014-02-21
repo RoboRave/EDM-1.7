@@ -11,21 +11,21 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockExtended extends BlockRender
 {
-	 @SideOnly(Side.CLIENT)
-     protected IIcon textureTop;
-     @SideOnly(Side.CLIENT)
-     protected IIcon textureBottom;
-     @SideOnly(Side.CLIENT)
-     protected IIcon textureSideWest;
-     @SideOnly(Side.CLIENT)
-     private IIcon textureSideNorth;
-	 private String name;
-	 @SideOnly(Side.CLIENT)
-	 private IIcon textureSideEast;
+	@SideOnly(Side.CLIENT)
+	  private IIcon iconTop;
+	  @SideOnly(Side.CLIENT)
+	  private IIcon iconBottom;
+	  @SideOnly(Side.CLIENT)
+	  private IIcon iconRight;
+	  @SideOnly(Side.CLIENT)
+	  private IIcon iconBack;
+	  @SideOnly(Side.CLIENT)
+	  private IIcon iconLeft;
+	  
 	 
 	 @SideOnly(Side.CLIENT)
      private IIcon[] icons;
-	private IIcon textureSideSouth;
+	private String name;
 	
 	
 	 
@@ -41,33 +41,36 @@ public class BlockExtended extends BlockRender
        }
       
       
-      
-       @Override
-   	public IIcon getIcon(int i, int j) {
-   		switch (i) {
-   			case 0:
-   				return textureBottom;
-   			case 1:
-   				return textureTop;
-   			case 2:
-   				return textureSideNorth;
-   			case 3:
-   				return textureSideEast;
-   			case 4:
-   				return textureSideSouth;
-   			default:
-   				return textureSideWest;
-   		}
-   	}
-       @Override
-   	@SideOnly(Side.CLIENT)
-   	public void registerBlockIcons(IIconRegister par1IconRegister) {
-   		textureTop = par1IconRegister.registerIcon(Strings.MODID+":"+this.name+"1");
-   		textureSideEast=par1IconRegister.registerIcon(Strings.MODID+":"+this.name+"2");
-   		textureSideNorth=par1IconRegister.registerIcon(Strings.MODID+":"+this.name+"3");
-   		textureSideWest = par1IconRegister.registerIcon(Strings.MODID+":"+this.name+"4");
-   		textureSideSouth= par1IconRegister.registerIcon(Strings.MODID+":"+this.name+"3");
-   		textureBottom= par1IconRegister.registerIcon(Strings.MODID+":"+this.name+"5");
-   	}
+       public IIcon getIcon(int paramInt1, int paramInt2)
+       {
+         if (paramInt1 == 0) {
+           return this.iconBottom;
+         }
+         if (paramInt1 == 1) {
+           return this.iconTop;
+         }
+         if (paramInt1 == 2) {
+           return this.blockIcon;
+         }
+         if (paramInt1 == 3) {
+           return this.iconBack;
+         }
+         if (paramInt1 == 4) {
+           return this.iconRight;
+         }
+         if (paramInt1 == 5) {
+           return this.iconLeft;
+         }
+         return null;
+       }
+       public void registerBlockIcons(IIconRegister paramly)
+       {
+         this.blockIcon = paramly.registerIcon(Strings.MODID+":"+this.name+"_front");
+         this.iconTop = paramly.registerIcon(Strings.MODID+":"+this.name+"_top");
+         this.iconBottom = paramly.registerIcon(Strings.MODID+":"+this.name+"_bottom");
+         this.iconRight = paramly.registerIcon(Strings.MODID+":"+this.name+"_right");
+         this.iconBack = paramly.registerIcon(Strings.MODID+":"+this.name+"_back");
+         this.iconLeft = paramly.registerIcon(Strings.MODID+":"+this.name+"_left");
+       }
        
 }

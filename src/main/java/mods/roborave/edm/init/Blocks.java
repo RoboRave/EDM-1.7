@@ -1,6 +1,7 @@
 package mods.roborave.edm.init;
 
 import java.util.HashMap;
+
 import mods.roborave.edm.EDM;
 import mods.roborave.edm.blocks.BlockCompressed;
 import mods.roborave.edm.blocks.BlockExtended;
@@ -14,7 +15,6 @@ public class Blocks
 	@SuppressWarnings("rawtypes")
 	public static HashMap blockList = new HashMap();
 
-	@SuppressWarnings("static-access")
 	public static void init() 
 	{
 		if (isInitialized) 

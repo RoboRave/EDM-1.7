@@ -1,10 +1,12 @@
-package mods.roborave.edm.items;
+package mods.roborave.edm.items.tools;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Multimap;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Set;
+
+import mods.roborave.edm.items.ItemCore;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
