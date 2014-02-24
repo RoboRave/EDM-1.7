@@ -5,8 +5,10 @@ import mods.roborave.edm.init.Armor;
 import mods.roborave.edm.init.Blocks;
 import mods.roborave.edm.init.Items;
 import mods.roborave.edm.interfaces.IProxy;
+import mods.roborave.edm.tick.VersionTicker;
 import net.minecraft.world.World;
 import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
 
 public class CommonProxy implements IProxy
 {
@@ -56,7 +58,6 @@ public class CommonProxy implements IProxy
 	}
 
 	public void registerTickers() {
-		// TODO Auto-generated method stub
-		
+		FMLCommonHandler.instance().bus().register(new VersionTicker());
 	}
 }

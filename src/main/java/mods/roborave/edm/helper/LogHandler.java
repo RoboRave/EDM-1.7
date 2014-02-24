@@ -21,7 +21,7 @@ public class LogHandler {
 		if (!configured){
 			init();
 		}
-		log.log(level, "[" + Strings.MODID + "] " + message, new Object[0]);
+		log.log(level, "[" + Strings.version + "] " + message, new Object[0]);
 	}
 
 	public static void info(String message) {

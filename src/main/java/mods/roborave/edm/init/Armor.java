@@ -2,6 +2,10 @@ package mods.roborave.edm.init;
 
 import mods.roborave.edm.EDM;
 import mods.roborave.edm.client.ClientProxy;
+import mods.roborave.edm.items.armor.ItemBoots;
+import mods.roborave.edm.items.armor.ItemChest;
+import mods.roborave.edm.items.armor.ItemHelmat;
+import mods.roborave.edm.items.armor.ItemLegs;
 import mods.roborave.edm.lib.Strings;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -16,10 +20,10 @@ public class Armor {
 	public static void init(){
 		
 		EDM.log.info("Initializing Armor");
-        ItemArmor BDH= (ItemArmor) new ItemArmor(ClientProxy.Black_Diamonds,RenderingRegistry.addNewArmourRendererPrefix("black"), 0).setUnlocalizedName("Black_Diamond_Helmat").setTextureName(Strings.MODID+":"+"Black_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BDC= (ItemArmor) new ItemArmor(ClientProxy.Black_Diamonds,RenderingRegistry.addNewArmourRendererPrefix("black"), 1).setUnlocalizedName("Black_Diamond_Chest").setTextureName(Strings.MODID+":"+"Black_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BDP= (ItemArmor) new ItemArmor(ClientProxy.Black_Diamonds,  RenderingRegistry.addNewArmourRendererPrefix("black"), 2).setUnlocalizedName("Black_Diamond_Legs").setTextureName(Strings.MODID+":"+"Black_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BDB= (ItemArmor) new ItemArmor(ClientProxy.Black_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("black"), 3).setUnlocalizedName("Black_Diamond_Boots").setTextureName(Strings.MODID+":"+"Black_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BDH= (ItemArmor) new ItemHelmat(ClientProxy.Black_Diamonds,1, "Black").setUnlocalizedName("Black_Diamond_Helmat").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BDC= (ItemArmor) new ItemChest(ClientProxy.Black_Diamonds,2 ,"Black").setUnlocalizedName("Black_Diamond_Chest").setTextureName(Strings.MODID+":"+"Black_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BDP= (ItemArmor) new ItemLegs(ClientProxy.Black_Diamonds, 3,"Black").setUnlocalizedName("Black_Diamond_Legs").setTextureName(Strings.MODID+":"+"Black_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BDB= (ItemArmor) new ItemBoots(ClientProxy.Black_Diamonds, 4,"Black").setUnlocalizedName("Black_Diamond_Boots").setTextureName(Strings.MODID+":"+"Black_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
 
         ItemArmor BLDH= (ItemArmor) new ItemArmor(ClientProxy.Blue_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("blue"), 0).setUnlocalizedName("Blue_Diamond_Helm").setTextureName(Strings.MODID+":"+"Blue_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
         ItemArmor BLDC= (ItemArmor) new ItemArmor(ClientProxy.Blue_Diamonds,  RenderingRegistry.addNewArmourRendererPrefix("blue"), 1).setUnlocalizedName("Blue_Diamond_Chest").setTextureName(Strings.MODID+":"+"Blue_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);

@@ -57,8 +57,7 @@ public class EDM
 		meta.authorList = Arrays.asList("Roborave");
 		meta.name = Strings.name;
 		meta.version = Strings.version;
-		meta.description = "This mod Adds more diamonds to the game of minecraft.";	
-	
+		meta.modId="Extra_Diamonds_Mod";
 		VersionChecker.registerMod(meta);
 		Reference.logger = event.getModLog();
 		Reference.config = new Config(event.getSuggestedConfigurationFile());
@@ -78,7 +77,8 @@ public class EDM
 	proxy.loadMod();
 	proxy.registerRenderThings();
 	
-	if(Reference.config.checkForUpdates()) {
+	if(Reference.config.checkForUpdates()) 
+	{
 		VersionChecker.startVersionCheck();
 	}
 

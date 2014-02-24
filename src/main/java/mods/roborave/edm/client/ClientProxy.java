@@ -1,11 +1,8 @@
 package mods.roborave.edm.client;
 
-import mods.roborave.creativetabs.MainTab;
 import mods.roborave.edm.EDM;
 import mods.roborave.edm.common.CommonProxy;
-import mods.roborave.edm.init.Armor;
-import mods.roborave.edm.init.Blocks;
-import mods.roborave.edm.init.Items;
+import mods.roborave.edm.creativetabs.MainTab;
 import mods.roborave.edm.interfaces.IProxy;
 import mods.roborave.edm.tick.VersionTicker;
 import net.minecraft.item.Item;

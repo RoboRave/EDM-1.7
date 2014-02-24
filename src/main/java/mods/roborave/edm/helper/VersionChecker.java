@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import mods.roborave.edm.EDM;
 import mods.roborave.edm.lib.Reference;
 import mods.roborave.edm.lib.Strings;
 
@@ -48,10 +49,11 @@ public class VersionChecker {
 
 	public static void startVersionCheck() {
 		new Thread("LunatriusCore Version Check") {
+			@SuppressWarnings("static-access")
 			@Override
 			public void run() {
 				try {
-					URL url = new URL(String.format(Strings.VERCHECK_URL, Reference.MINECRAFT));
+					URL url = new URL(String.format(Strings.VERCHECK_URL, Reference.MINECRAFT,Reference.MINECRAFT));
 					InputStream con = url.openStream();
 					String data = new String(ByteStreams.toByteArray(con));
 					con.close();
@@ -74,12 +76,12 @@ public class VersionChecker {
 										OUTDATED_MODS.put(modMetadata.name, String.format(Strings.VERCHECK_VERSION, versionLocal, versionRemote));
 									}
 									modMetadata.description += String.format(Strings.VERCHECK_UPDATEAVAILABLE, versionLocal, versionRemote);
-									Reference.logger.info(String.format(Strings.VERCHECK_UPDATEAVAILABLECON, modid, versionLocal, versionRemote));
+									EDM.log.info(String.format(Strings.VERCHECK_UPDATEAVAILABLECON, modid, versionLocal, versionRemote));
 								} else if (diff == 0) {
 									modMetadata.description += Strings.VERCHECK_UPTODATE;
-									Reference.logger.info(String.format(Strings.VERCHECK_UPTODATECON, modid));
+									EDM.log.info(String.format(Strings.VERCHECK_UPTODATECON, modid));
 								} else {
-									Reference.logger.info(String.format(Strings.VERCHECK_FUTURECON, modid));
+									EDM.log.info(String.format(Strings.VERCHECK_FUTURECON, modid));
 								}
 
 								Reference.config.addUpdate(modid, versionRemote.getVersionString());

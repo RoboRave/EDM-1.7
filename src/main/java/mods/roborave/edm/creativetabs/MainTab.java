@@ -1,4 +1,4 @@
-package mods.roborave.creativetabs;
+package mods.roborave.edm.creativetabs;
 
 import mods.roborave.edm.init.Blocks;
 import net.minecraft.creativetab.CreativeTabs;

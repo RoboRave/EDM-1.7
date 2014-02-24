@@ -1,0 +1,40 @@
+package mods.roborave.edm.items.armor;
+
+import mods.roborave.edm.lib.Strings;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class ItemHelmat extends ItemArmor
+{
+	public String color;
+	
+	
+	public ItemHelmat(ArmorMaterial par2EnumArmorMaterial, int par3, String color)
+	{
+		super(par2EnumArmorMaterial, par3, 0);
+		this.setCreativeTab(CreativeTabs.tabCombat);
+		this.color = color;
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister par1IconRegister)
+	{
+	    this.itemIcon = par1IconRegister.registerIcon(Strings.MODID + ":" + this.color + "_Diamond_Helm"); 
+	}
+	
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
+    {
+		return "minecraft"+":textures/models/armor/"+this.color.toLowerCase()+"_layer_1.png";
+    }
+	
+	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack) 
+	{
+		return true;
+	}
+	
+}

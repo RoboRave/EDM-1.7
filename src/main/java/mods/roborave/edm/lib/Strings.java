@@ -18,7 +18,7 @@ public class Strings {
 	public static final String CONFIG_KNOWNVERSIONS_DESC = "A list of known updates. Deleting versions from the list will remind you about them again.";
 
 	public static final String VERCHECK_RECOMMENDED_FORGE = "\n---\nRecommended Forge: %s";
-	public static final String VERCHECK_URL = "https://dl.dropboxusercontent.com/u/100336313/minecraft/mods/EDM/version/1.7.2/1.7.2.version";
+	public static final String VERCHECK_URL = "https://dl.dropboxusercontent.com/u/100336313/minecraft/mods/EDM/version/%s/%s.json";
 	public static final String VERCHECK_VERSION = "%s -> %s";
 
 	public static final String VERCHECK_UPDATEAVAILABLE = "\nUpdate is available (%s -> %s)!";
