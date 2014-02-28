@@ -27,6 +27,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 public class EDM
 {
+	public String acutalMCversion= "1.7.2";
 	
 	@Instance(Strings.MODID)
 	public static EDM Instance;
@@ -57,7 +58,7 @@ public class EDM
 		meta.authorList = Arrays.asList("Roborave");
 		meta.name = Strings.name;
 		meta.version = Strings.version;
-		meta.modId="Extra_Diamonds_Mod";
+		meta.modId=Strings.MODID;
 		VersionChecker.registerMod(meta);
 		Reference.logger = event.getModLog();
 		Reference.config = new Config(event.getSuggestedConfigurationFile());
@@ -96,7 +97,6 @@ public class EDM
 	}
 	
 	@EventHandler
-	@Subscribe
 	public void serverStarting(FMLServerStartingEvent evt)
 	{
 		 evt.registerServerCommand(new EDMCommand(evt.getServer()));
