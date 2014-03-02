@@ -45,19 +45,12 @@ public class EDM
 	
 	public static CreativeTabs tabEDMItems;
 	
-<<<<<<< HEAD
-	private mods.roborave.edm.helper.ore.Config config;
-	
 	private static Config VersionConfig;
 	
 	public LogHandler logger = new LogHandler();
-=======
+	
 	@IMod(Modid = "EDM", id = 1, name = "EDM")
 	
-	@Metadata(Strings.MODID)
-	public ModMetadata meta;
->>>>>>> origin/test
-
 	public Strings library = new Strings();
 	
 	public static TickHandler tickHandler = new TickHandler();
@@ -88,14 +81,7 @@ public class EDM
 		EDM.getVersionConfig().load();
 		EDM.getVersionConfig().save();
 		
-<<<<<<< HEAD
-=======
-		mods.roborave.edm.helper.ore.Config.init(event);
-		mods.roborave.edm.helper.ore.Config.load();
-		EDM.Instance.getLogger().info("Registering Ore Generators");
-		mods.roborave.edm.helper.ore.Config.save();
 		EDM.Instance.getLogger().info(IMod.class.getMethods().toString());
->>>>>>> origin/test
 		
     }
 	

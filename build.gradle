@@ -41,7 +41,7 @@ minecraft {
 }
 
 jar {
-    appendix = "universal"
+    appendix = "Client"
 }
 
 processResources {
