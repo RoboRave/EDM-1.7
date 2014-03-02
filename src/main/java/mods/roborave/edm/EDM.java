@@ -58,7 +58,7 @@ public class EDM
 		meta.authorList = Arrays.asList("Roborave");
 		meta.name = Strings.name;
 		meta.version = Strings.version;
-		meta.modId=Strings.MODID;
+		meta.modId="Extra_Diamonds_Mod";
 		VersionChecker.registerMod(meta);
 		Reference.logger = event.getModLog();
 		Reference.config = new Config(event.getSuggestedConfigurationFile());
