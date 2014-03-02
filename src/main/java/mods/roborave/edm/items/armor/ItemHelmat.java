@@ -9,12 +9,12 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemHelm extends ItemArmor
+public class ItemHelmat extends ItemArmor
 {
 	public String color;
 	
 	
-	public ItemHelm(ArmorMaterial par2EnumArmorMaterial, int par3, String color)
+	public ItemHelmat(ArmorMaterial par2EnumArmorMaterial, int par3, String color)
 	{
 		super(par2EnumArmorMaterial, par3, 0);
 		this.setCreativeTab(CreativeTabs.tabCombat);
