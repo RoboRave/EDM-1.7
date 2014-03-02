@@ -6,7 +6,6 @@ import mods.roborave.edm.config.Config;
 import mods.roborave.edm.helper.LogHandler;
 import mods.roborave.edm.helper.VersionChecker;
 import mods.roborave.edm.init.Blocks;
-import mods.roborave.edm.interfaces.IMod;
 import mods.roborave.edm.lib.Strings;
 import mods.roborave.edm.server.command.EDMCommand;
 import mods.roborave.edm.tick.TickHandler;
@@ -106,15 +105,6 @@ public class EDM
 	public void serverStarting(FMLServerStartingEvent evt)
 	{
 		 evt.registerServerCommand(new EDMCommand(evt.getServer()));
-	}
-	
-	public mods.roborave.edm.helper.ore.Config getConfig() 
-	{
-		return config;
-	}
-	public void setConfig(mods.roborave.edm.helper.ore.Config config) 
-	{
-		this.config = config;
 	}
 	
 	public Blocks getBlocks() 
