@@ -1,6 +1,5 @@
 package mods.roborave.edm.blocks;
 
-import mods.roborave.edm.EDM;
 import mods.roborave.edm.init.Blocks;
 import mods.roborave.edm.lib.Strings;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -29,15 +28,15 @@ public class BlockExtended extends BlockRender
 	
 	
 	 
-       @SuppressWarnings({ "unchecked", "static-access" })
+    
 	public BlockExtended(String name)
        {
              super(name);
              this.name = name;
-             this.setBlockTextureName(EDM.Instance.lib.MODID+":"+name);
+             this.setBlockTextureName(Strings.MODID()+":"+name);
              this.setBlockName(name);
              this.setCreativeTab(CreativeTabs.tabBlock);
-             Blocks.blockList.put(name,this);
+			 Blocks.blockList.put(name,this);
        }
       
       

@@ -26,6 +26,7 @@ public class ClientProxy extends CommonProxy implements IProxy
 	{
 		super.loadMod();
 		EDM.tabEDMBlock= new MainTab("EDM:Blocks");
+		EDM.tabEDMItems= new MainTab("EDM:Items");
 	}
 	
 	@Override
@@ -38,6 +39,7 @@ public class ClientProxy extends CommonProxy implements IProxy
 	public void PreInit()
 	{
 		super.PreInit();
+	
 	}
 	
 	@Override

@@ -23,7 +23,7 @@ public class ItemChest extends ItemArmor
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister par1IconRegister)
 	{
-	    this.itemIcon = par1IconRegister.registerIcon(Strings.MODID+":"+this.color+"_Diamond_Chest"); 
+		this.itemIcon = par1IconRegister.registerIcon(Strings.MODID()+":"+this.color+"_Diamond_Chest"); 
 	}
 	
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
@@ -31,9 +31,4 @@ public class ItemChest extends ItemArmor
 		return "minecraft"+":textures/models/armor/"+this.color.toLowerCase()+"_layer_1.png";
     }
 	
-	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack) 
-	{
-		return true;
-	}
-
 }

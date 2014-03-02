@@ -4,7 +4,6 @@
 		{
 			"modid": "Extra_diamonds_mod",
 			"name": "extra_diamonds_mod",
-			"description": "A collection of utilities for Lunatrius' mods.",
 			"mcversion": "${mcversion}",
 			"version": "${version}",
 			"authorList": [

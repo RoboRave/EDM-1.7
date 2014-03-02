@@ -4,21 +4,17 @@ import mods.roborave.edm.EDM;
 import mods.roborave.edm.lib.Strings;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.util.AxisAlignedBB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockWalkable extends BlockRender {
-	public static AxisAlignedBB b;
 
 	
-	@SuppressWarnings("static-access")
 	public BlockWalkable(String name) {
 		super(name);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setBlockName(name);
-		EDM.Instance.log.info(name.toString().toLowerCase());
-		//this.setBlockBounds(0.0F, 0.0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);
+		EDM.Instance.getLogger().info(name.toString().toLowerCase());
     } 
 	
 	/**

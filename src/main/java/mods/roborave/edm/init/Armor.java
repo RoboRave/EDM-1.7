@@ -4,13 +4,12 @@ import mods.roborave.edm.EDM;
 import mods.roborave.edm.client.ClientProxy;
 import mods.roborave.edm.items.armor.ItemBoots;
 import mods.roborave.edm.items.armor.ItemChest;
-import mods.roborave.edm.items.armor.ItemHelmat;
+import mods.roborave.edm.items.armor.ItemHelm;
 import mods.roborave.edm.items.armor.ItemLegs;
 import mods.roborave.edm.lib.Strings;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
-import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -19,26 +18,26 @@ public class Armor {
 	
 	public static void init(){
 		
-		EDM.log.info("Initializing Armor");
-        ItemArmor BDH= (ItemArmor) new ItemHelmat(ClientProxy.Black_Diamonds,1, "Black").setUnlocalizedName("Black_Diamond_Helmat").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BDC= (ItemArmor) new ItemChest(ClientProxy.Black_Diamonds,2 ,"Black").setUnlocalizedName("Black_Diamond_Chest").setTextureName(Strings.MODID+":"+"Black_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BDP= (ItemArmor) new ItemLegs(ClientProxy.Black_Diamonds, 3,"Black").setUnlocalizedName("Black_Diamond_Legs").setTextureName(Strings.MODID+":"+"Black_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BDB= (ItemArmor) new ItemBoots(ClientProxy.Black_Diamonds, 4,"Black").setUnlocalizedName("Black_Diamond_Boots").setTextureName(Strings.MODID+":"+"Black_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
+		EDM.Instance.getLogger().info("Initializing Armor");
+        ItemArmor BDH= (ItemArmor) new ItemHelm(ClientProxy.Black_Diamonds,1, "Black").setUnlocalizedName("Black_Diamond_Helmat").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BDC= (ItemArmor) new ItemChest(ClientProxy.Black_Diamonds,2 ,"Black").setUnlocalizedName("Black_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BDP= (ItemArmor) new ItemLegs(ClientProxy.Black_Diamonds, 3,"Black").setUnlocalizedName("Black_Diamond_Legs").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BDB= (ItemArmor) new ItemBoots(ClientProxy.Black_Diamonds, 4,"Black").setUnlocalizedName("Black_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
 
-        ItemArmor BLDH= (ItemArmor) new ItemArmor(ClientProxy.Blue_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("blue"), 0).setUnlocalizedName("Blue_Diamond_Helm").setTextureName(Strings.MODID+":"+"Blue_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BLDC= (ItemArmor) new ItemArmor(ClientProxy.Blue_Diamonds,  RenderingRegistry.addNewArmourRendererPrefix("blue"), 1).setUnlocalizedName("Blue_Diamond_Chest").setTextureName(Strings.MODID+":"+"Blue_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BLDP= (ItemArmor) new ItemArmor(ClientProxy.Blue_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("blue"), 2).setUnlocalizedName("Blue_Diamond_Pants").setTextureName(Strings.MODID+":"+"Blue_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor BLDB= (ItemArmor) new ItemArmor(ClientProxy.Blue_Diamonds,  RenderingRegistry.addNewArmourRendererPrefix("blue"), 3).setUnlocalizedName("Blue_Diamond_Boots").setTextureName(Strings.MODID+":"+"Blue_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BLDH= (ItemArmor) new ItemHelm(ClientProxy.Blue_Diamonds, 1, "Blue").setUnlocalizedName("Blue_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BLDC= (ItemArmor) new ItemChest(ClientProxy.Blue_Diamonds,  2, "Blue").setUnlocalizedName("Blue_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BLDP= (ItemArmor) new ItemLegs(ClientProxy.Blue_Diamonds, 3, "Blue").setUnlocalizedName("Blue_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor BLDB= (ItemArmor) new ItemBoots(ClientProxy.Blue_Diamonds, 4,"Blue").setUnlocalizedName("Blue_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
 
-        ItemArmor GDH= (ItemArmor) new ItemArmor(ClientProxy.Gray_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("gray"), 0).setUnlocalizedName("Gray_Diamond_Helm").setTextureName(Strings.MODID+":"+"Gray_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor GDC= (ItemArmor) new ItemArmor(ClientProxy.Gray_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("gray"), 1).setUnlocalizedName("Gray_Diamond_Chest").setTextureName(Strings.MODID+":"+"Gray_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor GDP= (ItemArmor) new ItemArmor(ClientProxy.Gray_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("gray"), 2).setUnlocalizedName("Gray_Diamond_Pants").setTextureName(Strings.MODID+":"+"Gray_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor GDB= (ItemArmor) new ItemArmor(ClientProxy.Gray_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("gray"), 3).setUnlocalizedName("Gray_Diamond_Boots").setTextureName(Strings.MODID+":"+"Gray_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor GDH= (ItemArmor) new ItemHelm(ClientProxy.Gray_Diamonds,1, "Gray").setUnlocalizedName("Gray_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor GDC= (ItemArmor) new ItemChest(ClientProxy.Gray_Diamonds,2,"Gray").setUnlocalizedName("Gray_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor GDP= (ItemArmor) new ItemLegs(ClientProxy.Gray_Diamonds,3,"Gray").setUnlocalizedName("Gray_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor GDB= (ItemArmor) new ItemBoots(ClientProxy.Gray_Diamonds,4,"Gray").setUnlocalizedName("Gray_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
 
-        ItemArmor GRDH= (ItemArmor) new ItemArmor(ClientProxy.Green_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("green"), 0).setUnlocalizedName("Green_Diamond_Helm").setTextureName(Strings.MODID+":"+"Green_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor GRDC= (ItemArmor) new ItemArmor(ClientProxy.Green_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("green"), 1).setUnlocalizedName("Green_Diamond_Chest").setTextureName(Strings.MODID+":"+"Green_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor GRDP= (ItemArmor) new ItemArmor(ClientProxy.Green_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("green"), 2).setUnlocalizedName("Green_Diamond_Pants").setTextureName(Strings.MODID+":"+"Green_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
-        ItemArmor GRDB= (ItemArmor) new ItemArmor(ClientProxy.Green_Diamonds, RenderingRegistry.addNewArmourRendererPrefix("green"), 3).setUnlocalizedName("Green_Diamond_Boots").setTextureName(Strings.MODID+":"+"Green_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor GRDH= (ItemArmor) new ItemHelm(ClientProxy.Green_Diamonds, 1,"Green").setUnlocalizedName("Green_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor GRDC= (ItemArmor) new ItemChest(ClientProxy.Green_Diamonds, 2,"Green").setUnlocalizedName("Green_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor GRDP= (ItemArmor) new ItemLegs(ClientProxy.Green_Diamonds, 3,"Green").setUnlocalizedName("Green_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
+        ItemArmor GRDB= (ItemArmor) new ItemBoots(ClientProxy.Green_Diamonds, 4,"Green").setUnlocalizedName("Green_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
 
 		registerItem(BDH);
 		registerItem(BDC);
@@ -60,30 +59,31 @@ public class Armor {
 		registerItem(GRDP);
 		registerItem(GRDB);
 
-		Items.itemList.put(BDH,BDH.getUnlocalizedName());
-		Items.itemList.put(BDC,BDC.getUnlocalizedName());
-		Items.itemList.put(BDP,BDP.getUnlocalizedName());
-		Items.itemList.put(BDB,BDB.getUnlocalizedName());
+		Items.itemList.put(BDH.getUnlocalizedName(),BDH);
+		Items.itemList.put(BDC.getUnlocalizedName(),BDC);
+		Items.itemList.put(BDP.getUnlocalizedName(),BDP);
+		Items.itemList.put(BDB.getUnlocalizedName(),BDB);
 		
-		Items.itemList.put(BLDH,BLDH.getUnlocalizedName());
-		Items.itemList.put(BLDC,BLDC.getUnlocalizedName());
-		Items.itemList.put(BLDP,BLDP.getUnlocalizedName());
-		Items.itemList.put(BLDB,BLDB.getUnlocalizedName());
+		Items.itemList.put(BLDH.getUnlocalizedName(),BLDH);
+		Items.itemList.put(BLDC.getUnlocalizedName(),BLDC);
+		Items.itemList.put(BLDP.getUnlocalizedName(),BLDP);
+		Items.itemList.put(BLDB.getUnlocalizedName(),BLDB);
 
-		Items.itemList.put(GDH,GDH.getUnlocalizedName());
-		Items.itemList.put(GDC,GDC.getUnlocalizedName());
-		Items.itemList.put(GDP,GDP.getUnlocalizedName());
-		Items.itemList.put(GDB,GDB.getUnlocalizedName());
+		Items.itemList.put(GDH.getUnlocalizedName(),GDH);
+		Items.itemList.put(GDC.getUnlocalizedName(),GDC);
+		Items.itemList.put(GDP.getUnlocalizedName(),GDP);
+		Items.itemList.put(GDB.getUnlocalizedName(),GDB);
 		
-		Items.itemList.put(GRDH,GRDH.getUnlocalizedName());
-		Items.itemList.put(GRDC,GRDC.getUnlocalizedName());
-		Items.itemList.put(GRDP,GRDP.getUnlocalizedName());
-		Items.itemList.put(GRDB,GRDB.getUnlocalizedName());
+		Items.itemList.put(GRDH.getUnlocalizedName(),GRDH);
+		Items.itemList.put(GRDC.getUnlocalizedName(),GRDC);
+		Items.itemList.put(GRDP.getUnlocalizedName(),GRDP);
+		Items.itemList.put(GRDB.getUnlocalizedName(),GRDB);
 		
 	}
 	@SideOnly(Side.CLIENT)
 	public static void registerItem(Item item)
 	{
-		GameRegistry.registerItem(item, item.getUnlocalizedName(), Strings.MODID);
+		EDM.Instance.getString();
+		GameRegistry.registerItem(item, item.getUnlocalizedName(), Strings.MODID());
 	}
 }

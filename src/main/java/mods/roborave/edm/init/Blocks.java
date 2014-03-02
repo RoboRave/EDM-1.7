@@ -4,51 +4,53 @@ import java.util.HashMap;
 
 import mods.roborave.edm.EDM;
 import mods.roborave.edm.blocks.BlockCompressed;
-import mods.roborave.edm.blocks.BlockExtended;
-import mods.roborave.edm.blocks.BlockWalkable;
+import mods.roborave.edm.blocks.BlockOre;
+import mods.roborave.edm.helper.ore.Ores;
+import mods.roborave.edm.helper.worldgen.OreConfig;
 import net.minecraft.block.Block;
+
+import org.apache.logging.log4j.Level;
 
 public class Blocks 
 {
 
 	private static boolean isInitialized = false;
-	@SuppressWarnings("rawtypes")
-	public static HashMap blockList = new HashMap();
+	
+	/**Testing 
+	 * default: public HashMap blockList = new HashMap();
+	 */
+	public static HashMap<String,Block> blockList = new HashMap<String, Block>();
 
+	public Blocks instance;
+
+	public static Blocks blocks;
+	
 	public static void init() 
 	{
 		if (isInitialized) 
 		{
-			EDM.log.info("Block initialization failed, already initialized");
+			EDM.Instance.getLogger().info("Block initialization failed, already initialized");
 			return;
 		}
 		
-		EDM.log.info("Initializing Blocks");
-		new BlockCompressed("Black_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Blue_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Gold_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Gray_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Green_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Orange_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Pink_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Purple_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Red_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("White_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockCompressed("Yellow_diamond_Block").setHardness(2.0F).setResistance(5.0F);
-		new BlockExtended("wip");
-		new BlockWalkable("wip1").setBlockUnbreakable();
-		isInitialized = true;
-	}
-
-	public static void TestBlocks()
-	{
+		EDM.Instance.getLogger().log(Level.INFO,"Initializing Blocks");
 		
+		for (Ores ore : Ores.values()) {
+			OreConfig oreConfig = ore.getDefaultConfig();
+				new BlockOre(oreConfig);
+		}
+		for (Ores ore : Ores.values()) 
+		{
+				new BlockCompressed(ore+"_diamond_Block");
+		}
+
+		isInitialized = true;
 	}
 	public static Block getBlock(String blockName) 
 	{
 		try 
 		{
-			return (Block) blockList.get(blockName);
+			return (Block) Blocks.blockList.get(blockName);
 		} 
 		catch (Throwable e)
 		{

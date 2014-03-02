@@ -8,7 +8,6 @@ import net.minecraft.item.Item;
 public class ItemCore extends Item{
 	protected int itemId;
 	
-	@SuppressWarnings("unchecked")
 	public ItemCore(String itemName) {
 		super();
 		this.setCreativeTab(CreativeTabs.tabMaterials);

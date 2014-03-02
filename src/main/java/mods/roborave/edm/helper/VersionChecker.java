@@ -48,8 +48,8 @@ public class VersionChecker {
 	}
 
 	public static void startVersionCheck() {
-		new Thread("LunatriusCore Version Check") {
-			@SuppressWarnings("static-access")
+		new Thread("EDM Version Check") {
+			@SuppressWarnings("unchecked")
 			@Override
 			public void run() {
 				try {
@@ -76,12 +76,12 @@ public class VersionChecker {
 										OUTDATED_MODS.put(modMetadata.name, String.format(Strings.VERCHECK_VERSION, versionLocal, versionRemote));
 									}
 									modMetadata.description += String.format(Strings.VERCHECK_UPDATEAVAILABLE, versionLocal, versionRemote);
-									EDM.log.info(String.format(Strings.VERCHECK_UPDATEAVAILABLECON, modid, versionLocal, versionRemote));
+									EDM.Instance.getLogger().info(String.format(Strings.VERCHECK_UPDATEAVAILABLECON, modid, versionLocal, versionRemote));
 								} else if (diff == 0) {
 									modMetadata.description += Strings.VERCHECK_UPTODATE;
-									EDM.log.info(String.format(Strings.VERCHECK_UPTODATECON, modid));
+									EDM.Instance.getLogger().info(String.format(Strings.VERCHECK_UPTODATECON, modid));
 								} else {
-									EDM.log.info(String.format(Strings.VERCHECK_FUTURECON, modid));
+									EDM.Instance.getLogger().info(String.format(Strings.VERCHECK_FUTURECON, modid));
 								}
 
 								Reference.config.addUpdate(modid, versionRemote.getVersionString());

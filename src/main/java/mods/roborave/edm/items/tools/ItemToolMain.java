@@ -32,7 +32,7 @@ public class ItemToolMain extends ItemCore
     protected Item.ToolMaterial toolMaterial;
     @SuppressWarnings("unused")
 	private static final String __OBFID = "CL_00000019";
-
+    @SideOnly(Side.CLIENT)
     protected ItemToolMain(float p_i45333_1_, Item.ToolMaterial p_i45333_2_, @SuppressWarnings("rawtypes") Set p_i45333_3_, String itemname)
     {
     	super(itemname);

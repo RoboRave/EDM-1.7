@@ -23,7 +23,7 @@ public class ItemBoots extends ItemArmor
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister par1IconRegister)
 	{
-	    this.itemIcon = par1IconRegister.registerIcon(Strings.MODID + ":" + this.color + "_Diamond_Boots"); 
+		this.itemIcon = par1IconRegister.registerIcon(Strings.MODID() + ":" + this.color + "_Diamond_Boots"); 
 	}
 	
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
