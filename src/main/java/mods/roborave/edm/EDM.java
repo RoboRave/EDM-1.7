@@ -6,11 +6,7 @@ import mods.roborave.edm.config.Config;
 import mods.roborave.edm.helper.LogHandler;
 import mods.roborave.edm.helper.VersionChecker;
 import mods.roborave.edm.init.Blocks;
-<<<<<<< HEAD
-=======
 import mods.roborave.edm.interfaces.IMod;
-import mods.roborave.edm.lib.Reference;
->>>>>>> origin/test
 import mods.roborave.edm.lib.Strings;
 import mods.roborave.edm.server.command.EDMCommand;
 import mods.roborave.edm.tick.TickHandler;
