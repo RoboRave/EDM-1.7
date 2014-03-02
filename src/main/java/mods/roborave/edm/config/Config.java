@@ -9,12 +9,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Config extends Configuration {
+public class Config extends Configuration 
+{
 	public final Property propCheckForUpdates;
 	public final Property propSilenceKnownUpdates;
 	public final Property propKnownUpdates;
 
-	public Config(File file) {
+	public Config(File file)
+	{
 		super(file);
 
 		this.propCheckForUpdates = get(Strings.CONFIG_CATEGORY_VERCHECK, Strings.CONFIG_CHECKFORUPDATES, true, Strings.CONFIG_CHECKFORUPDATES_DESC);
@@ -22,18 +24,22 @@ public class Config extends Configuration {
 		this.propKnownUpdates = get(Strings.CONFIG_CATEGORY_VERCHECK, Strings.CONFIG_KNOWNVERSIONS, new String[0], Strings.CONFIG_KNOWNVERSIONS_DESC);
 	}
 
-	public boolean checkForUpdates() {
+	public boolean checkForUpdates() 
+	{
 		return this.propCheckForUpdates.getBoolean(true);
 	}
 
-	public boolean silenceKnownUpdates() {
+	public boolean silenceKnownUpdates() 
+	{
 		return this.propSilenceKnownUpdates.getBoolean(false);
 	}
 
-	public void addUpdate(String modid, String version) {
+	public void addUpdate(String modid, String version) 
+	{
 		List<String> knownUpdatesList = new ArrayList<String>(Arrays.asList(this.propKnownUpdates.getStringList()));
 		String update = String.format("%s %s", modid, version);
-		if (!knownUpdatesList.contains(update)) {
+		if (!knownUpdatesList.contains(update)) 
+		{
 			knownUpdatesList.add(update);
 		}
 		Collections.sort(knownUpdatesList);
@@ -44,7 +50,8 @@ public class Config extends Configuration {
 		save();
 	}
 
-	public boolean canNotifyOfUpdate(String modid, String version) {
+	public boolean canNotifyOfUpdate(String modid, String version) 
+	{
 		return !Arrays.asList(this.propKnownUpdates.getStringList()).contains(String.format("%s %s", modid, version)) || !silenceKnownUpdates();
 	}
 }

@@ -17,13 +17,14 @@ public class Config {
 	private static boolean configured;
 	private static Configuration configFile;
 
-	public static void init(FMLPreInitializationEvent event) {
+	public static void init(FMLPreInitializationEvent event) 
+	{
 		log.info("Initializing Configuration");
 		configFile = new Configuration(new File(event.getModConfigurationDirectory()+"ores.cfg"));
 		configured = true;
 	}
 
-	public static void load() {
+	public void load() {
 		if (!configured) {
 			log.info("Error - configuration not initialized!");
 			return;
@@ -34,11 +35,9 @@ public class Config {
 		configFile.addCustomCategoryComment(CAT_ORES, "Ore configuration = oreEnabled,oreSource");
 		//configFile.addCustomCategoryComment(CAT_ORES, "oreEnabled = true or false   // enables or disables the ore");
 		//configFile.addCustomCategoryComment(CAT_ORES, "oreSource = DEFAULT          // sets the ore source, DEFAULT is mod gen, used to generate ores from other mods");
-
-		EDM.Instance.regenKey = getProp("regenKey", EDM.Instance.regenKey, "change this to regenerate ores");
 	}
 
-	public static void save() {
+	public void save() {
 		if (!configured) {
 			log.info("Error - configuration not initialized!");
 			return;		

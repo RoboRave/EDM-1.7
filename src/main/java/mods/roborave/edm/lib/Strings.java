@@ -7,13 +7,13 @@ public class Strings {
 	
 	public static final String MODID = "Extra_diamonds_Mod";
 	
-	public static final String MODID(){	return MODID;	}
+	public static final String MODID(){	return Reference.MODID;	}
 	
 	public static final  String name = "extra_diamonds_mod";
-	public String Name(){	return name;	}
+	public String Name(){	return Reference.NAME;	}
 	
 	public static final String version = "3.0.0";
-	public String Vers(){	return version; }
+	public static String Vers(){	return Reference.VERSION; }
 	
 	public static final String CONFIG_CATEGORY_VERCHECK = "versioncheck";
 

@@ -11,8 +11,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class Armor 
 {
@@ -105,7 +103,6 @@ public class Armor
 	
 	public static void registerItem(Item item)
 	{
-		EDM.Instance.getString();
 		GameRegistry.registerItem(item, item.getUnlocalizedName(), Strings.MODID());
 	}
 }

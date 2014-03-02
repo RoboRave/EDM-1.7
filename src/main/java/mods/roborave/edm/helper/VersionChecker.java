@@ -72,7 +72,7 @@ public class VersionChecker {
 								int diff = versionRemote.compareTo(versionLocal);
 
 								if (diff > 0) {
-									if (Reference.config.canNotifyOfUpdate(modid, versionRemote.getVersionString())) {
+									if (EDM.getVersionConfig().canNotifyOfUpdate(modid, versionRemote.getVersionString())) {
 										OUTDATED_MODS.put(modMetadata.name, String.format(Strings.VERCHECK_VERSION, versionLocal, versionRemote));
 									}
 									modMetadata.description += String.format(Strings.VERCHECK_UPDATEAVAILABLE, versionLocal, versionRemote);
@@ -84,7 +84,7 @@ public class VersionChecker {
 									EDM.Instance.getLogger().info(String.format(Strings.VERCHECK_FUTURECON, modid));
 								}
 
-								Reference.config.addUpdate(modid, versionRemote.getVersionString());
+								EDM.getVersionConfig().addUpdate(modid, versionRemote.getVersionString());
 							} catch (Exception ignored) {
 							}
 						}

@@ -3,9 +3,8 @@ package mods.roborave.edm.lib;
 import java.io.InputStream;
 import java.util.Properties;
 
-import mods.roborave.edm.config.Config;
-
 import org.apache.logging.log4j.Logger;
+
 import com.google.common.base.Throwables;
 
 public class Reference {
@@ -25,7 +24,7 @@ public class Reference {
 		MINECRAFT = prop.getProperty("version.minecraft");
 	}
 
-	public static final String MODID = "Extra_diamonds_mod";
+	public static final String MODID = "Extra_diamonds_Mod";
 	public static final String NAME = "extra_diamonds_mod";
 	public static final String VERSION;
 	public static final String FORGE;
@@ -34,5 +33,5 @@ public class Reference {
 	public static final String PROXY_CLIENT = "com.github.lunatrius.core.client.ClientProxy";
 
 	public static Logger logger = null;
-	public static Config config = null;
+	
 }

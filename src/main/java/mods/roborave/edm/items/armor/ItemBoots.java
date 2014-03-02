@@ -28,7 +28,7 @@ public class ItemBoots extends ItemArmor
 	
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
-		return "minecraft"+":textures/models/armor/"+this.color.toLowerCase()+"_layer_2.png";
+		return "minecraft"+":textures/models/armor/"+this.color.toLowerCase()+"_layer_1.png";
     }
 
 }

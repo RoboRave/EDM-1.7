@@ -1,5 +1,6 @@
 package mods.roborave.edm.helper.recipes;
 
+import mods.roborave.edm.init.Armor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -19,28 +20,28 @@ public class RecipesArmor
         			mods.roborave.edm.init.Items.get("Item_Green_diamond")
         		}, 
         		{
-        			mods.roborave.edm.init.Items.get("Black_Diamond_Helm"), 
-        			mods.roborave.edm.init.Items.get("Blue_Diamond_Helm"), 
-        			mods.roborave.edm.init.Items.get("Gray_Diamond_Helm"), 
-        			mods.roborave.edm.init.Items.get("Green_Diamond_Helm"),
+        			Armor.BDH, 
+        			Armor.BLDH, 
+        			Armor.GDH, 
+        			Armor.GRDH,
         		}, 
         		{
-            		mods.roborave.edm.init.Items.get("Black_Diamond_Chest"), 
-            		mods.roborave.edm.init.Items.get("Blue_Diamond_Chest"),
-            		mods.roborave.edm.init.Items.get("Gray_Diamond_Chest"),
-            		mods.roborave.edm.init.Items.get("Green_Diamond_Chest"),
+        			Armor.BDC, 
+        			Armor.BLDC,
+        			Armor.GDC,
+        			Armor.GRDC,
             	}, 
             	{
-            		mods.roborave.edm.init.Items.get("Black_Diamond_Pants"), 
-            		mods.roborave.edm.init.Items.get("Blue_Diamond_Pants"), 
-            		mods.roborave.edm.init.Items.get("Gray_Diamond_Pants"), 
-            		mods.roborave.edm.init.Items.get("Green_Diamond_Pants"), 
+            		Armor.BDP, 
+        			Armor.BLDP,
+        			Armor.GDP,
+        			Armor.GRDP,
             	}, 
             	{
-            		mods.roborave.edm.init.Items.get("Black_Diamond_Boots"),
-            		mods.roborave.edm.init.Items.get("Blue_Diamond_Boots"), 
-            		mods.roborave.edm.init.Items.get("Gray_Diamond_Boots"), 
-            		mods.roborave.edm.init.Items.get("Green_Diamond_Boots"), 
+            		Armor.BDB, 
+        			Armor.BLDB,
+        			Armor.GDB,
+        			Armor.GRDB,
             	}
           };
     }
