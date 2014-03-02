@@ -57,7 +57,7 @@ public class RecipesArmor
             for (int j = 0; j < this.recipeItems.length - 1; ++j)
             {
                 Item item = (Item)this.recipeItems[j + 1][i];
-                GameRegistry.addRecipe(new ItemStack(item,0,0), new Object[] {this.recipePatterns[j], 'X', object});
+                GameRegistry.addRecipe(new ItemStack(item), new Object[] {this.recipePatterns[j], 'X', object});
             }
         }
     }
