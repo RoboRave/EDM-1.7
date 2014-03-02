@@ -29,6 +29,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 public class EDM
 {
+	public String acutalMCversion= "1.7.2";
 	
 	@SidedProxy
 	(
@@ -118,7 +119,6 @@ public class EDM
 	}
 	
 	@EventHandler
-	@Subscribe
 	public void serverStarting(FMLServerStartingEvent evt)
 	{
 		 evt.registerServerCommand(new EDMCommand(evt.getServer()));
