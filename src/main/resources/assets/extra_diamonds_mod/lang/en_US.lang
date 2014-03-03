@@ -14,5 +14,5 @@ message.uptodate=You are using the latest version of %s (%s) so you don't need t
 message.version.help=use this command to find version of %s
 message.error.version=Could not check the version of %s !
 commands.edm.usage=wrong usage:/edm <subcommand>
-item.wip.desc=test
+item.wip.desc=This item has The ability to place blocks.
 edm.message.updatesavailable=Updates are available for %s.

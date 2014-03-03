@@ -55,7 +55,7 @@ public class Items {
 			{
 				new ItemCore("Item_"+item.name()+"_diamond").setCreativeTab(CreativeTabs.tabMaterials);
 			}
-			 new ItemSpecial("wip", "hi");
+			 new ItemSpecial("wip").onUse(Blocks.getBlock("Black_diamond_Block"));
 			
 			//Tools
 			EDM.Instance.getLogger().info("Initializing Tools");

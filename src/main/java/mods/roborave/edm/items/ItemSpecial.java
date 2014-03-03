@@ -2,12 +2,16 @@ package mods.roborave.edm.items;
 
 import java.util.List;
 
+import org.lwjgl.input.Keyboard;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,7 +30,7 @@ public class ItemSpecial extends ItemCore{
 	private float par9;
 	private float par10;
 	private ItemSpecial Useable;
-	public ItemSpecial(String itemName, String message) 
+	public ItemSpecial(String itemName) 
 	{
 		super(itemName);
 	}
@@ -34,9 +38,13 @@ public class ItemSpecial extends ItemCore{
 	@SuppressWarnings("unchecked")
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, @SuppressWarnings("rawtypes") List par3List ,boolean par4)
 	{
-			par3List.add("Hold Shift for more info");
-			par3List.add(StatCollector.translateToLocal(this.getUnlocalizedName()+".desc"));
-		
+		 if (FMLClientHandler.instance().getClient().inGameHasFocus|| Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+		 {
+			 par3List.add(StatCollector.translateToLocal(this.getUnlocalizedName()+".desc"));
+			 
+		}else{
+			par3List.add(EnumChatFormatting.GRAY+"Press SHIFT for more information.");
+		}
 		
 	}
 	
