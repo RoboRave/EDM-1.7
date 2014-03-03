@@ -3,6 +3,7 @@ package mods.roborave.edm.items;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
@@ -14,6 +15,17 @@ public class ItemSpecial extends ItemCore{
 
 	
 	private Block block;
+	private ItemStack par1ItemStack;
+	private EntityPlayer par2EntityPlayer;
+	private World par3World;
+	private int par4;
+	private int par5;
+	private int par6;
+	private int par7;
+	private float par8;
+	private float par9;
+	private float par10;
+	private ItemSpecial Useable;
 	public ItemSpecial(String itemName, String message) 
 	{
 		super(itemName);
@@ -22,7 +34,10 @@ public class ItemSpecial extends ItemCore{
 	@SuppressWarnings("unchecked")
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, @SuppressWarnings("rawtypes") List par3List ,boolean par4)
 	{
-		par3List.add(StatCollector.translateToLocal(this.getUnlocalizedName()+".desc"));
+			par3List.add("Hold Shift for more info");
+			par3List.add(StatCollector.translateToLocal(this.getUnlocalizedName()+".desc"));
+		
+		
 	}
 	
 	
@@ -30,6 +45,12 @@ public class ItemSpecial extends ItemCore{
 	{
 		this.block = block;
 		return this;
+		
+	}
+	public ItemSpecial getItemUseEvent()
+	{
+		this.onItemUse(par1ItemStack, par2EntityPlayer, par3World, par4, par5, par6, par7, par8, par9, par10);
+		return Useable;
 		
 	}
 	 public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)

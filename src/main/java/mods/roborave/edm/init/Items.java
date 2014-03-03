@@ -8,6 +8,7 @@ import mods.roborave.edm.EDM;
 import mods.roborave.edm.client.ClientProxy;
 import mods.roborave.edm.helper.ore.items.OreItems;
 import mods.roborave.edm.items.ItemCore;
+import mods.roborave.edm.items.ItemSpecial;
 import mods.roborave.edm.items.tools.ItemAxeMain;
 import mods.roborave.edm.items.tools.ItemPickaxeMain;
 import mods.roborave.edm.items.tools.ItemSpadeMain;
@@ -54,6 +55,7 @@ public class Items {
 			{
 				new ItemCore("Item_"+item.name()+"_diamond").setCreativeTab(CreativeTabs.tabMaterials);
 			}
+			 new ItemSpecial("wip", "hi");
 			
 			//Tools
 			EDM.Instance.getLogger().info("Initializing Tools");
@@ -80,7 +82,7 @@ public class Items {
 	        OPAX = new ItemAxeMain(ClientProxy.OLTM,"White_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
 	        OPSD = new ItemSpadeMain(ClientProxy.OLTM,"White_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
 	        OPSW = new ItemSwordMain(ClientProxy.OLTM,"White_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
-		
+	       
 	        registerItem(BDPX);
 	        registerItem(BDAX);
 	        registerItem(BDSD);
