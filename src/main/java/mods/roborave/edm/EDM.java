@@ -44,8 +44,6 @@ public class EDM
 	
 	public LogHandler logger = new LogHandler();
 	
-	@IMod(Modid = "EDM", id = 1, name = "EDM")
-	
 	public Strings library = new Strings();
 	
 	public static TickHandler tickHandler = new TickHandler();
@@ -75,8 +73,6 @@ public class EDM
 		EDM.setVersionConfig(new Config(event.getSuggestedConfigurationFile())); 
 		EDM.getVersionConfig().load();
 		EDM.getVersionConfig().save();
-		
-		EDM.Instance.getLogger().info(IMod.class.getMethods().toString());
 		
     }
 	
