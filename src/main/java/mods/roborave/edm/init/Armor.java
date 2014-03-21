@@ -35,6 +35,21 @@ public class Armor
 	public static ItemArmor GRDP;
 	public static ItemArmor GRDB;
 	
+	public static ItemArmor ODH;
+	public static ItemArmor ODC;
+	public static ItemArmor ODP;
+	public static ItemArmor ODB;
+	
+	public static ItemArmor PDH;
+	public static ItemArmor PDC;
+	public static ItemArmor PDP;
+	public static ItemArmor PDB;
+	
+	public static ItemArmor PUDH;
+	public static ItemArmor PUDC;
+	public static ItemArmor PUDP;
+	public static ItemArmor PUDB;
+	
 	public static void init()
 	{
 		
@@ -59,26 +74,46 @@ public class Armor
         GRDP= (ItemArmor) new ItemLegs(ClientProxy.Green_Diamonds, 3,"Green").setUnlocalizedName("Green_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
         GRDB= (ItemArmor) new ItemBoots(ClientProxy.Green_Diamonds, 4,"Green").setUnlocalizedName("Green_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
 
-		registerItem(BDH);
-		registerItem(BDC);
-		registerItem(BDP);
-		registerItem(BDB);
-		
-		registerItem(BLDH);
-		registerItem(BLDC);
-		registerItem(BLDP);
-		registerItem(BLDB);
+        ODH= (ItemArmor) new ItemHelmat(ClientProxy.Orange_Diamonds,1, "Orange").setUnlocalizedName("Orange_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
+        ODC= (ItemArmor) new ItemChest(ClientProxy.Orange_Diamonds,2,"Orange").setUnlocalizedName("Orange_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
+        ODP= (ItemArmor) new ItemLegs(ClientProxy.Orange_Diamonds,3,"Orange").setUnlocalizedName("Orange_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
+        ODB= (ItemArmor) new ItemBoots(ClientProxy.Orange_Diamonds,4,"Orange").setUnlocalizedName("Orange_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
+       
+        PDH= (ItemArmor) new ItemHelmat(ClientProxy.Pink_Diamonds,1, "Pink").setUnlocalizedName("Pink_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
+        PDC= (ItemArmor) new ItemChest(ClientProxy.Pink_Diamonds,2,"Pink").setUnlocalizedName("Pink_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
+        PDP= (ItemArmor) new ItemLegs(ClientProxy.Pink_Diamonds,3,"Pink").setUnlocalizedName("Pink_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
+        PDB= (ItemArmor) new ItemBoots(ClientProxy.Pink_Diamonds,4,"Pink").setUnlocalizedName("Pink_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
+        
+        PUDH= (ItemArmor) new ItemHelmat(ClientProxy.Purple_Diamonds,1, "Purple").setUnlocalizedName("Purple_Diamond_Helm").setCreativeTab(CreativeTabs.tabCombat);
+        PUDC= (ItemArmor) new ItemChest(ClientProxy.Purple_Diamonds,2,"Purple").setUnlocalizedName("Purple_Diamond_Chest").setCreativeTab(CreativeTabs.tabCombat);
+        PUDP= (ItemArmor) new ItemLegs(ClientProxy.Purple_Diamonds,3,"Purple").setUnlocalizedName("Purple_Diamond_Pants").setCreativeTab(CreativeTabs.tabCombat);
+        PUDB= (ItemArmor) new ItemBoots(ClientProxy.Purple_Diamonds,4,"Purple").setUnlocalizedName("Purple_Diamond_Boots").setCreativeTab(CreativeTabs.tabCombat);
 
-		registerItem(GDH);
-		registerItem(GDC);
-		registerItem(GDP);
-		registerItem(GDB);
+        
+        
+        registerArmorSet(BDH,BDC,BDP,BDB);
 		
-		registerItem(GRDH);
-		registerItem(GRDC);
-		registerItem(GRDP);
-		registerItem(GRDB);
+        registerArmorSet(BLDH,BLDC,BLDP,BLDB);
 
+        registerArmorSet(GDH,GDC,GDP,GDB);
+		
+        registerArmorSet(GRDH,GRDC,GRDP,GRDB);
+
+		registerItem(ODH);
+		registerItem(ODC);
+		registerItem(ODP);
+		registerItem(ODB);
+		
+		registerItem(PDH);
+		registerItem(PDC);
+		registerItem(PDP);
+		registerItem(PDB);
+		
+		registerItem(PUDH);
+		registerItem(PUDC);
+		registerItem(PUDP);
+		registerItem(PUDB);
+		
 		Items.itemList.put(BDH.getUnlocalizedName(),BDH);
 		Items.itemList.put(BDC.getUnlocalizedName(),BDC);
 		Items.itemList.put(BDP.getUnlocalizedName(),BDP);
@@ -99,8 +134,32 @@ public class Armor
 		Items.itemList.put(GRDP.getUnlocalizedName(),GRDP);
 		Items.itemList.put(GRDB.getUnlocalizedName(),GRDB);
 		
+		Items.itemList.put(ODH.getUnlocalizedName(),ODH);
+		Items.itemList.put(ODC.getUnlocalizedName(),ODC);
+		Items.itemList.put(ODP.getUnlocalizedName(),ODP);
+		Items.itemList.put(ODB.getUnlocalizedName(),ODB);
+		
+		Items.itemList.put(PDH.getUnlocalizedName(),PDH);
+		Items.itemList.put(PDC.getUnlocalizedName(),PDC);
+		Items.itemList.put(PDP.getUnlocalizedName(),PDP);
+		Items.itemList.put(PDB.getUnlocalizedName(),PDB);
+		
+		Items.itemList.put(PUDH.getUnlocalizedName(),PUDH);
+		Items.itemList.put(PUDC.getUnlocalizedName(),PUDC);
+		Items.itemList.put(PUDP.getUnlocalizedName(),PUDP);
+		Items.itemList.put(PUDB.getUnlocalizedName(),PUDB);
+		
+		
 	}
 	
+	private static void registerArmorSet(ItemArmor helmet, ItemArmor chestplate,
+	            ItemArmor leggings, ItemArmor boots)
+	    {
+	        GameRegistry.registerItem(helmet, helmet.getUnlocalizedName(),Strings.MODID());
+	        GameRegistry.registerItem(chestplate, chestplate.getUnlocalizedName(),Strings.MODID());
+	        GameRegistry.registerItem(leggings, leggings.getUnlocalizedName(),Strings.MODID());
+	        GameRegistry.registerItem(boots, boots.getUnlocalizedName(),Strings.MODID());
+	    }
 	public static void registerItem(Item item)
 	{
 		GameRegistry.registerItem(item, item.getUnlocalizedName(), Strings.MODID());

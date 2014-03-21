@@ -54,6 +54,11 @@ public class Items {
 	public static Item PUDSD;
 	public static Item PUDSW;
 	
+	public static Item RDPX;
+	public static Item RDAX;
+	public static Item RDSD;
+	public static Item RDSW;
+	
 	public static Item BD;
 	public static Item BLD;
 	public static Item GD;
@@ -105,6 +110,7 @@ public class Items {
 	        BLDAX= new ItemAxeMain(ClientProxy.Blue,"Blue_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
 	        BLDSD= new ItemSpadeMain(ClientProxy.Blue,"Blue_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
 			BLDSW= new ItemSwordMain(ClientProxy.Blue,"Blue_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
+			
 			EDM.Instance.getLogger().info("Initializing Tools:Gray Diamond");
 	        GDPX = new ItemPickaxeMain(ClientProxy.Gray,"Gray_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
 	        GDAX = new ItemAxeMain(ClientProxy.Gray,"Gray_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
@@ -122,6 +128,21 @@ public class Items {
 	        ODAX = new ItemAxeMain(ClientProxy.Orange,"Orange_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
 	        ODSD = new ItemSpadeMain(ClientProxy.Orange,"Orange_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
 	        ODSW = new ItemSwordMain(ClientProxy.Orange,"Orange_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
+	        
+	        PDPX = new ItemPickaxeMain(ClientProxy.Pink,"Pink_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
+	        PDAX = new ItemAxeMain(ClientProxy.Pink,"Pink_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
+	        PDSD = new ItemSpadeMain(ClientProxy.Pink,"Pink_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
+	        PDSW = new ItemSwordMain(ClientProxy.Pink,"Pink_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
+		
+	        PUDPX = new ItemPickaxeMain(ClientProxy.Purple,"Purple_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
+	        PUDAX = new ItemAxeMain(ClientProxy.Purple,"Purple_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
+	        PUDSD = new ItemSpadeMain(ClientProxy.Purple,"Purple_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
+	        PUDSW = new ItemSwordMain(ClientProxy.Purple,"Purple_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
+		
+	        RDPX = new ItemPickaxeMain(ClientProxy.Red,"Red_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
+	        RDAX = new ItemAxeMain(ClientProxy.Red,"Red_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
+	        RDSD = new ItemSpadeMain(ClientProxy.Red,"Red_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
+	        RDSW = new ItemSwordMain(ClientProxy.Red,"Red_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
 		
 	        registerItem(BDPX);
 	        registerItem(BDAX);
@@ -148,6 +169,21 @@ public class Items {
 	        registerItem(ODSD);
 	        registerItem(ODSW);
 	        
+	        registerItem(PDPX);
+	        registerItem(PDAX);
+	        registerItem(PDSD);
+	        registerItem(PDSW);
+	        
+	        registerItem(PUDPX);
+	        registerItem(PUDAX);
+	        registerItem(PUDSD);
+	        registerItem(PUDSW);
+	        
+	        registerItem(RDPX);
+	        registerItem(RDAX);
+	        registerItem(RDSD);
+	        registerItem(RDSW);
+	        
 	        Items.itemList.put(BDPX.getUnlocalizedName(), BDPX);
 	        Items.itemList.put(BDAX.getUnlocalizedName(), BDAX);
 	        Items.itemList.put(BDSD.getUnlocalizedName(), BDSD);
@@ -172,6 +208,22 @@ public class Items {
 	        Items.itemList.put(ODAX.getUnlocalizedName(), ODAX);
 	        Items.itemList.put(ODSD.getUnlocalizedName(), ODSD);
 	        Items.itemList.put(ODSW.getUnlocalizedName(), ODSW);
+	        
+	        Items.itemList.put(PDPX.getUnlocalizedName(), PDPX);
+	        Items.itemList.put(PDAX.getUnlocalizedName(), PDAX);
+	        Items.itemList.put(PDSD.getUnlocalizedName(), PDSD);
+	        Items.itemList.put(PDSW.getUnlocalizedName(), PDSW);
+
+	        Items.itemList.put(PDPX.getUnlocalizedName(), PUDPX);
+	        Items.itemList.put(PDAX.getUnlocalizedName(), PUDAX);
+	        Items.itemList.put(PDSD.getUnlocalizedName(), PUDSD);
+	        Items.itemList.put(PDSW.getUnlocalizedName(), PUDSW);
+	        
+	        Items.itemList.put(PDPX.getUnlocalizedName(), RDPX);
+	        Items.itemList.put(PDAX.getUnlocalizedName(), RDAX);
+	        Items.itemList.put(PDSD.getUnlocalizedName(), RDSD);
+	        Items.itemList.put(PDSW.getUnlocalizedName(), RDSW);
+
 			isInitialized = true;
 			}
 		    

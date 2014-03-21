@@ -33,6 +33,7 @@ public class CommonProxy implements IProxy
 		Items.init();
 		Armor.init();
 		Recipes.init();
+		
 	}
 
 	@Override
@@ -44,7 +45,7 @@ public class CommonProxy implements IProxy
 	@Override
 	public void PostInit() 
 	{
-
+		
 	}
 
 	public void registerRenderThings() 

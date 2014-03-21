@@ -1,5 +1,5 @@
+#Blocks
 tile.Black_diamond_Block.name=Black Diamond Block
-tile.Black_diamond_Block.desc=Black Diamond Test
 tile.Blue_diamond_Block.name=Blue Diamond Block
 tile.Gold_diamond_Block.name=Gold Diamond Block
 tile.Gray_diamond_Block.name=Gray Diamond Block
@@ -7,12 +7,28 @@ tile.Green_diamond_Block.name=Green Diamond Block
 tile.Orange_diamond_Block.name=Orange Diamond Block
 tile.Pink_diamond_Block.name=Pink Diamond Block
 tile.Purple_diamond_Block.name=Purple Diamond Block
+tile.Red_diamond_Block.name=Red Diamond Block
 tile.White_diamond_Block.name=White Diamond Block
 tile.Yellow_diamond_Block.name=Yellow Diamond Block
+
+#Items
+item.Item_Black_diamond.name=Black Diamond
+item.Item_Blue_diamond.name=BlueDiamond
+item.Item_Gold_diamond.name=Gold Diamond
+item.Item_Gray_diamond.name=Gray Diamond
+item.Item_Green_diamond.name=Green Diamond
+item.Item_Orange_diamond.name=Orange Diamond
+item.Item_Pink_diamond.name=Pink Diamond
+item.Item_Purple_diamond.name=Purple Diamond
+item.Item_Red_diamond.name=Red Diamond
+item.Item_White_diamond.name=White Diamond
+item.Item_Yellow_diamond.name=Yellow Diamond
+item.wip.desc_1=This item has The ability to place blocks.
+item.wip.desc_2=This item has The ability to place Items.
+#Messages
 message.outdated=%s is out of date! Please visit %s to get the latest version (%s)
 message.uptodate=You are using the latest version of %s (%s) so you don't need to updated it
 message.version.help=use this command to find version of %s
 message.error.version=Could not check the version of %s !
 commands.edm.usage=wrong usage:/edm <subcommand>
-item.wip.desc=This item has The ability to place blocks.
 edm.message.updatesavailable=Updates are available for %s.

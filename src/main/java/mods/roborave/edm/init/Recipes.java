@@ -12,11 +12,13 @@ public class Recipes
 	 public static Item GDPX;
 	 public static Item GRDPX;
 	 public static Item ODPX;
+	 
 	 public static Item BDSW;
 	 public static Item BLDSW;
 	 public static Item GDSW;
 	 public static Item GRDSW;
 	 public static Item ODSW;
+	 public static Item PDSW;
 	 
 	 public static void init()
 	 {
@@ -29,8 +31,6 @@ public class Recipes
 	
 	 public final static class Sword
 	 {
-		
-
 		public static void Init()
 		{
 			 	BDSW = Items.BDSW;
@@ -47,6 +47,9 @@ public class Recipes
 		
 				ODSW = Items.ODSW;
 				GameRegistry.addRecipe(new ItemStack(ODSW,1), new Object[] {"X", "X", "#", Character.valueOf('#'), net.minecraft.init.Items.stick,Character.valueOf('X'), Items.OD});
+				
+				PDSW = Items.PDSW;
+				GameRegistry.addRecipe(new ItemStack(PDSW,1), new Object[] {"X", "X", "#", Character.valueOf('#'), net.minecraft.init.Items.stick,Character.valueOf('X'), Items.PD});
 		 }
 	 }
 		public final static class Pickaxe

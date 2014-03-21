@@ -4,5 +4,7 @@
 	<comment>English (en_US) Localization File</comment>
 <!--	<entry key="tile.XXX.name">XXX</entry> -->
 	<entry key="tile.Black_diamond_Block.name">Black Diamond Block</entry> 
+    <entry key="tile.Blue_diamond_Block.name">Blue Diamond Block</entry> 
+    <entry key="tile.Gold_diamond_Block.name">Gold Diamond Block</entry> 
 
 </properties>
