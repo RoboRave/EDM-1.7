@@ -1,6 +1,7 @@
 package mods.roborave.edm.common;
 
 import mods.roborave.edm.helper.LocalizationHandler;
+import mods.roborave.edm.helper.ore.generate.EDMWorld;
 import mods.roborave.edm.init.Armor;
 import mods.roborave.edm.init.Blocks;
 import mods.roborave.edm.init.Items;
@@ -16,7 +17,7 @@ public class CommonProxy implements IProxy
 	@Override
 	public void loadMod() 
 	{
-		
+		Init();
 	}
 
 	@Override
@@ -39,7 +40,7 @@ public class CommonProxy implements IProxy
 	@Override
 	public void Init() 
 	{
-		
+		EDMWorld.init();
 	}
 
 	@Override
@@ -62,4 +63,8 @@ public class CommonProxy implements IProxy
 	{
 		FMLCommonHandler.instance().bus().register(new VersionTicker());
 	}
+	public void announce(String announcement)
+    {
+        FMLCommonHandler.instance().getMinecraftServerInstance().logInfo(announcement);
+    }
 }

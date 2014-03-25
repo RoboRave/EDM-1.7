@@ -11,8 +11,6 @@ import net.minecraft.world.World;
 public class ItemTest extends Item
 {
     private Block field_150935_a;
-    private static final String __OBFID = "CL_00001773";
-
     public ItemTest(Block p_i45329_1_, String par1Str)
     {
         this.field_150935_a = p_i45329_1_;

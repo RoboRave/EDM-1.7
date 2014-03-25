@@ -6,4 +6,5 @@ public interface IProxy {
 	void PreInit();
 	void Init();
 	void PostInit();
+	void announce(String announcement);
 }

@@ -17,6 +17,7 @@ public class TestRender extends TileEntitySpecialRenderer
 	
 	public void renderModel(TileEntityBlock par1, double par2, double par3, double par4, float par5 )
 	{
+		@SuppressWarnings("unused")
 		int direction = par1.direction;
 		   GL11.glPushMatrix();
 		   GL11.glTranslatef((float)par2 + 0.5F, (float)par3 + 0.205F, (float)par4 + 0.5F);

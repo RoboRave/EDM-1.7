@@ -1,6 +1,7 @@
 package mods.roborave.edm.helper.recipes;
 
 import mods.roborave.edm.init.Armor;
+import mods.roborave.edm.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -14,34 +15,49 @@ public class RecipesArmor
         this.recipeItems = new Object[][] 
         {
         		{
-        			mods.roborave.edm.init.Items.get("Item_Black_diamond"),
-        			mods.roborave.edm.init.Items.get("Item_Blue_diamond"),
-        			mods.roborave.edm.init.Items.get("Item_Gold_diamond"), 
-        			mods.roborave.edm.init.Items.get("Item_Green_diamond")
+        			Items.BD,
+        			Items.BLD,
+        			Items.GD,
+        			Items.GRD,
+        			Items.OD,
+        			Items.PD,
+        			Items.PUD
         		}, 
         		{
         			Armor.BDH, 
         			Armor.BLDH, 
         			Armor.GDH, 
         			Armor.GRDH,
+        			Armor.ODH,
+        			Armor.PDH,
+        			Armor.PUDH
         		}, 
         		{
         			Armor.BDC, 
         			Armor.BLDC,
         			Armor.GDC,
         			Armor.GRDC,
+        			Armor.ODC,
+        			Armor.PDC,
+        			Armor.PUDC
             	}, 
             	{
             		Armor.BDP, 
         			Armor.BLDP,
         			Armor.GDP,
         			Armor.GRDP,
+        			Armor.ODP,
+        			Armor.PDP, 
+        			Armor.PUDP
             	}, 
             	{
             		Armor.BDB, 
         			Armor.BLDB,
         			Armor.GDB,
         			Armor.GRDB,
+        			Armor.ODB,
+        			Armor.PDB,
+        			Armor.PUDB
             	}
           };
     }

@@ -1,7 +1,6 @@
 package mods.roborave.edm.creativetabs;
 
 import mods.roborave.edm.init.Blocks;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;

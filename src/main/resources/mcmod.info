@@ -2,21 +2,11 @@
 	"modListVersion": 2,
 	"modList": [
 		{
-			"modid": "Extra_diamonds_mod",
+			"modid": "Extra_diamonds_Mod",
 			"name": "extra_diamonds_mod",
 			"mcversion": "${mcversion}",
 			"version": "${version}",
-			"authorList": [
-				"roborave"
-			],
-			"credits": "",
-			"dependants": [  ],
-			"dependencies": [  ],
-			"parent": "",
-			"requiredMods": [  ],
-			"logoFile": "",
-			"screenshots": [  ],
-			"useDependencyInformation": true
+			"logoFile":"/EDM_Logo.png"
 		}
 	]
 }

@@ -71,14 +71,6 @@ public class Config {
 		return getProp(key, defaultValue, "");
 	}
 
-	@SuppressWarnings("unused")
-	private static String getOreCfgLine(OreConfig ore) {
-		if (ore == null)
-			return null;
-		return Boolean.toString(ore.enabled) + ","
-				+ ore.source.name();
-	}
-
 	public static String getCatOreGen() {
 		return CAT_ORE_GEN;
 	}

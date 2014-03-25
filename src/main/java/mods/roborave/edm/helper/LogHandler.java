@@ -10,7 +10,7 @@ public class LogHandler{
 	
 	public static Logger log;
 	
-	public LogHandler instance;
+	public static LogHandler instance;
 	
 	private static boolean configured = false;
 
@@ -28,7 +28,11 @@ public class LogHandler{
 		}
 		log.log(level, "[" + Strings.version + "] " + message, new Object[0]);
 	}
-
+	public void log(Level level, String message,Object... params)
+	{
+		log.log(level, message, params);
+	}
+	
 	public void info(String message) 
 	{
 		log(Level.INFO, message);

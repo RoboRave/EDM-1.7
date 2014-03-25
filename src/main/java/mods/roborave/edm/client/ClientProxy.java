@@ -6,6 +6,8 @@ import mods.roborave.edm.creativetabs.MainTab;
 import mods.roborave.edm.interfaces.IProxy;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -71,6 +73,11 @@ public class ClientProxy extends CommonProxy implements IProxy
 	{
 		super.registerTickers();
 	}
-	
+
+    public void announce(String announcement)
+    {
+        FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new ChatComponentText(announcement));
+    }
+
 	
 }

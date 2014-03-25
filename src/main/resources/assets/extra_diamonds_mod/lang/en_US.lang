@@ -32,3 +32,4 @@ message.version.help=use this command to find version of %s
 message.error.version=Could not check the version of %s !
 commands.edm.usage=wrong usage:/edm <subcommand>
 edm.message.updatesavailable=Updates are available for %s.
+lang.tran.message=%s

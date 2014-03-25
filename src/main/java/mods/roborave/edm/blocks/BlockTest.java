@@ -1,24 +1,19 @@
 package mods.roborave.edm.blocks;
 
-import java.util.List;
-
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockTest extends BlockContainer {
 
+	@SuppressWarnings("rawtypes")
 	public Class TileEntityBlock;
 	
-	public BlockTest(String name,Class tclass) 
+	public BlockTest(String name,@SuppressWarnings("rawtypes") Class tclass) 
 	{
 		super(Material.rock);
 		this.TileEntityBlock=tclass;
