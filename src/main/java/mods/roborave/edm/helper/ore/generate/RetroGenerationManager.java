@@ -46,14 +46,24 @@ public class RetroGenerationManager implements IWorldGenerator {
 		
 	}
 
-	private void generateSurface(Random random, int chunkX, int chunkZ, World world) {
-		addOre(mods.roborave.edm.init.Blocks.getBlock("Black_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 20, 60, 10, 20, 20);
-		addOre(mods.roborave.edm.init.Blocks.getBlock("Blue_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 20, 64, 5, 7, 15);
+	private void generateSurface(Random random, int chunkX, int chunkZ, World world) 
+	{
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Black_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 64, 5, 7, 20);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Blue_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 60, 5, 7, 18);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Gray_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 56, 5, 7, 16);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Green_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 54, 5, 7,14);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Orange_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 52, 5, 7,12);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Pink_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 50, 5, 7, 10);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Purple_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 48, 5, 7,8);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Red_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 46, 5, 7,6);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("White_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 44, 5, 7,4);
+		addOre(mods.roborave.edm.init.Blocks.getBlock("Yellow_diamond_Ore"), Blocks.stone, random, world, chunkX, chunkZ, 15, 42, 5, 7,2);
+	
 	}
 
-	private void generateNether(Random random, int chunkX, int chunkZ, World world) {
-		// TODO Auto-generated method stub
-
+	private void generateNether(Random random, int chunkX, int chunkZ, World world) 
+	{
+		
 	}
 
 }

@@ -17,21 +17,36 @@ public class RecipesTools
         			Items.BLD, 
         			Items.GD,
         			Items.GRD,
-        			Items.OD
+        			Items.OD,
+        			Items.PD,
+        			Items.PUD,
+        			Items.RD,
+        			Items.WD,
+        			Items.YD
         		}, 
         		{
         			Items.BDPX, 
         			Items.BLDPX, 
         			Items.GDPX, 
         			Items.GRDPX,
-        			Items.ODPX
+        			Items.ODPX,
+        			Items.PDPX,
+        			Items.PUDPX,
+        			Items.RDPX,
+        			Items.WDPX,
+        			Items.YDPX
         		}, 
         		{
         			Items.BDSD, 
         			Items.BLDSD, 
         			Items.GDSD, 
         			Items.GRDSD,
-        			Items.ODSD
+        			Items.ODSD,
+        			Items.PDSD,
+        			Items.PUDSD,
+        			Items.RDSD,
+        			Items.WDSD,
+        			Items.YDSD
         		}, 
         		{
         			Items.BDAX, 
@@ -39,6 +54,11 @@ public class RecipesTools
         			Items.GDAX,
         			Items.GRDAX, 
         			Items.ODAX, 
+        			Items.PDAX,
+        			Items.PUDAX,
+        			Items.RDAX,
+        			Items.WDAX,
+        			Items.YDAX
         		}
         	};
     }

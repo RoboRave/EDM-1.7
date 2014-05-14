@@ -4,7 +4,6 @@ import java.io.File;
 
 import mods.roborave.edm.EDM;
 import mods.roborave.edm.helper.LogHandler;
-import mods.roborave.edm.helper.worldgen.OreConfig;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;

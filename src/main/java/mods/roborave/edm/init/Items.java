@@ -5,7 +5,6 @@ import java.util.HashMap;
 import mods.roborave.edm.EDM;
 import mods.roborave.edm.client.ClientProxy;
 import mods.roborave.edm.items.ItemCore;
-import mods.roborave.edm.items.ItemSpecial;
 import mods.roborave.edm.items.tools.ItemAxeMain;
 import mods.roborave.edm.items.tools.ItemPickaxeMain;
 import mods.roborave.edm.items.tools.ItemSpadeMain;
@@ -59,6 +58,16 @@ public class Items {
 	public static Item RDSD;
 	public static Item RDSW;
 	
+	public static Item WDPX;
+	public static Item WDAX;
+	public static Item WDSD;
+	public static Item WDSW;
+	
+	public static Item YDPX;
+	public static Item YDAX;
+	public static Item YDSD;
+	public static Item YDSW;
+	
 	public static Item BD;
 	public static Item BLD;
 	public static Item GD;
@@ -83,18 +92,18 @@ public class Items {
 			//Diamonds
 			EDM.Instance.getLogger().info("Initializing Items");
 			
-			BD =new ItemCore("Item_Black_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			BLD =new ItemCore("Item_Blue_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			GD =new ItemCore("Item_Gray_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			GRD =new ItemCore("Item_Green_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			OD =new ItemCore("Item_Orange_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			PD =new ItemCore("Item_Pink_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			PUD =new ItemCore("Item_Purple_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			RD =new ItemCore("Item_Red_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			WD =new ItemCore("Item_White_diamond").setCreativeTab(CreativeTabs.tabMaterials);
-			YD =new ItemCore("Item_Yellow_diamond").setCreativeTab(CreativeTabs.tabMaterials);
+			BD =new ItemCore("Item_Black_diamond").setCreativeTab(EDM.tabEDMItems);
+			BLD =new ItemCore("Item_Blue_diamond").setCreativeTab(EDM.tabEDMItems);
+			GD =new ItemCore("Item_Gray_diamond").setCreativeTab(EDM.tabEDMItems);
+			GRD =new ItemCore("Item_Green_diamond").setCreativeTab(EDM.tabEDMItems);
+			OD =new ItemCore("Item_Orange_diamond").setCreativeTab(EDM.tabEDMItems);
+			PD =new ItemCore("Item_Pink_diamond").setCreativeTab(EDM.tabEDMItems);
+			PUD =new ItemCore("Item_Purple_diamond").setCreativeTab(EDM.tabEDMItems);
+			RD =new ItemCore("Item_Red_diamond").setCreativeTab(EDM.tabEDMItems);
+			WD =new ItemCore("Item_White_diamond").setCreativeTab(EDM.tabEDMItems);
+			YD =new ItemCore("Item_Yellow_diamond").setCreativeTab(EDM.tabEDMItems);
 			
-			 new ItemSpecial("wip").onUse(Blocks.getBlock("Black_diamond_Block"));
+			// new ItemSpecial("wip").onUse(Blocks.getBlock("Black_diamond_Block"));
 			
 			//Tools
 			EDM.Instance.getLogger().info("Initializing Tools");
@@ -129,20 +138,35 @@ public class Items {
 	        ODSD = new ItemSpadeMain(ClientProxy.Orange,"Orange_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
 	        ODSW = new ItemSwordMain(ClientProxy.Orange,"Orange_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
 	        
+	        EDM.Instance.getLogger().info("Initializing Tools:Pink Diamond");
 	        PDPX = new ItemPickaxeMain(ClientProxy.Pink,"Pink_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
 	        PDAX = new ItemAxeMain(ClientProxy.Pink,"Pink_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
 	        PDSD = new ItemSpadeMain(ClientProxy.Pink,"Pink_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
 	        PDSW = new ItemSwordMain(ClientProxy.Pink,"Pink_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
-		
+	        
+	        EDM.Instance.getLogger().info("Initializing Tools:Purple Diamond");
 	        PUDPX = new ItemPickaxeMain(ClientProxy.Purple,"Purple_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
 	        PUDAX = new ItemAxeMain(ClientProxy.Purple,"Purple_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
 	        PUDSD = new ItemSpadeMain(ClientProxy.Purple,"Purple_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
 	        PUDSW = new ItemSwordMain(ClientProxy.Purple,"Purple_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
-		
+	        
+	        EDM.Instance.getLogger().info("Initializing Tools:Red Diamond");
 	        RDPX = new ItemPickaxeMain(ClientProxy.Red,"Red_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
 	        RDAX = new ItemAxeMain(ClientProxy.Red,"Red_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
 	        RDSD = new ItemSpadeMain(ClientProxy.Red,"Red_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
 	        RDSW = new ItemSwordMain(ClientProxy.Red,"Red_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
+		
+	        EDM.Instance.getLogger().info("Initializing Tools:White Diamond");
+	        WDPX = new ItemPickaxeMain(ClientProxy.White,"White_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
+	        WDAX = new ItemAxeMain(ClientProxy.White,"White_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
+	        WDSD = new ItemSpadeMain(ClientProxy.White,"White_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
+	        WDSW = new ItemSwordMain(ClientProxy.White,"White_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
+		
+	        EDM.Instance.getLogger().info("Initializing Tools:Yellow Diamond");
+	        YDPX = new ItemPickaxeMain(ClientProxy.Yellow,"Yellow_Diamond_Pick").setCreativeTab(CreativeTabs.tabTools);
+	        YDAX = new ItemAxeMain(ClientProxy.Yellow,"Yellow_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
+	        YDSD = new ItemSpadeMain(ClientProxy.Yellow,"Yellow_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
+	        YDSW = new ItemSwordMain(ClientProxy.White,"Yellow_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
 		
 	        registerItem(BDPX);
 	        registerItem(BDAX);
@@ -184,6 +208,16 @@ public class Items {
 	        registerItem(RDSD);
 	        registerItem(RDSW);
 	        
+	        registerItem(WDPX);
+	        registerItem(WDAX);
+	        registerItem(WDSD);
+	        registerItem(WDSW);
+	        
+	        registerItem(YDPX);
+	        registerItem(YDAX);
+	        registerItem(YDSD);
+	        registerItem(YDSW);
+	        
 	        Items.itemList.put(BDPX.getUnlocalizedName(), BDPX);
 	        Items.itemList.put(BDAX.getUnlocalizedName(), BDAX);
 	        Items.itemList.put(BDSD.getUnlocalizedName(), BDSD);
@@ -223,6 +257,16 @@ public class Items {
 	        Items.itemList.put(PDAX.getUnlocalizedName(), RDAX);
 	        Items.itemList.put(PDSD.getUnlocalizedName(), RDSD);
 	        Items.itemList.put(PDSW.getUnlocalizedName(), RDSW);
+	        
+	        Items.itemList.put(PDPX.getUnlocalizedName(), WDPX);
+	        Items.itemList.put(PDAX.getUnlocalizedName(), WDAX);
+	        Items.itemList.put(PDSD.getUnlocalizedName(), WDSD);
+	        Items.itemList.put(PDSW.getUnlocalizedName(), WDSW);
+
+	        Items.itemList.put(YDPX.getUnlocalizedName(), YDPX);
+	        Items.itemList.put(YDAX.getUnlocalizedName(), YDAX);
+	        Items.itemList.put(YDSD.getUnlocalizedName(), YDSD);
+	        Items.itemList.put(YDSW.getUnlocalizedName(), YDSW);
 
 			isInitialized = true;
 			}

@@ -17,7 +17,6 @@ public class CommonProxy implements IProxy
 	@Override
 	public void loadMod() 
 	{
-		Init();
 	}
 
 	@Override

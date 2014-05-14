@@ -3,6 +3,7 @@ package mods.roborave.edm.creativetabs;
 import mods.roborave.edm.init.Blocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -13,10 +14,19 @@ public class MainTab extends CreativeTabs {
 	{
 		super(CreativeTabs.getNextID(),label);
 		this.block = par1Block;
+		
 	}
-	  @SideOnly(Side.CLIENT)
-	  public Item getTabIconItem()
-	  {
-	        return Item.getItemFromBlock(Blocks.getBlock(this.block));
-	  }
+	 
+	  @Override
+		public ItemStack getIconItemStack()
+		{
+			
+			return new ItemStack(Blocks.getBlock(this.block));
+		}
+	@Override
+	@SideOnly(Side.CLIENT)
+	public Item getTabIconItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

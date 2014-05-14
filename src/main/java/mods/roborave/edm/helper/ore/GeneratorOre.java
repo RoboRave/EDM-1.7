@@ -13,13 +13,13 @@ import net.minecraft.world.gen.feature.WorldGenerator;
  */
 public class GeneratorOre extends WorldGenerator
 {
-    protected Block block;
+    protected Block id;
     protected int meta;
     protected int veinSize;
 
-    public GeneratorOre(Block block, int meta, int veinSize)
+    public GeneratorOre(Block id, int meta, int veinSize)
     {
-        this.block = block;
+        this.id = id;
         this.meta = meta;
         this.veinSize = veinSize;
     }
@@ -27,7 +27,7 @@ public class GeneratorOre extends WorldGenerator
     public void swapStoneBlock(World world, Random random, int x, int y, int z)
     {
         if (world.getBlock(x, y, z) == Blocks.stone)
-            world.setBlock(x, y, z, block, meta, 2);
+            world.setBlock(x, y, z, id, meta, 2);
     }
 
     @Override

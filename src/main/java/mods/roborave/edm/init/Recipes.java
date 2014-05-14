@@ -33,7 +33,8 @@ public class Recipes
 		 Sword.Init();
 		 (new RecipesArmor()).addRecipes();
 		 (new RecipesTools()).addRecipes();
-		 //(new RecipesWeapons()).addRecipes();
+		 (new SmeltOre()).addRecipes();
+		
 	 }
 	
 	 public final static class Sword
@@ -63,6 +64,12 @@ public class Recipes
 		 
 				RDSW = Items.RDSW;
 				GameRegistry.addRecipe(new ItemStack(RDSW,1), new Object[] {"X", "X", "#", Character.valueOf('#'), net.minecraft.init.Items.stick,Character.valueOf('X'), Items.RD});
+				
+				WDSW = Items.WDSW;
+				GameRegistry.addRecipe(new ItemStack(WDSW,1), new Object[] {"X", "X", "#", Character.valueOf('#'), net.minecraft.init.Items.stick,Character.valueOf('X'), Items.WD});
+				
+				YDSW = Items.YDSW;
+				GameRegistry.addRecipe(new ItemStack(YDSW,1), new Object[] {"X", "X", "#", Character.valueOf('#'), net.minecraft.init.Items.stick,Character.valueOf('X'), Items.YD});
 		}
 	 }
 }

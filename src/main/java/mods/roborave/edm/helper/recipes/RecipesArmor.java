@@ -21,7 +21,10 @@ public class RecipesArmor
         			Items.GRD,
         			Items.OD,
         			Items.PD,
-        			Items.PUD
+        			Items.PUD,
+        			Items.RD,
+        			Items.WD,
+        			Items.YD
         		}, 
         		{
         			Armor.BDH, 
@@ -30,7 +33,10 @@ public class RecipesArmor
         			Armor.GRDH,
         			Armor.ODH,
         			Armor.PDH,
-        			Armor.PUDH
+        			Armor.PUDH,
+        			Armor.RDH,
+        			Armor.WDH,
+        			Armor.YDH
         		}, 
         		{
         			Armor.BDC, 
@@ -39,7 +45,10 @@ public class RecipesArmor
         			Armor.GRDC,
         			Armor.ODC,
         			Armor.PDC,
-        			Armor.PUDC
+        			Armor.PUDC,
+        			Armor.RDC,
+        			Armor.WDC,
+        			Armor.YDC
             	}, 
             	{
             		Armor.BDP, 
@@ -48,7 +57,10 @@ public class RecipesArmor
         			Armor.GRDP,
         			Armor.ODP,
         			Armor.PDP, 
-        			Armor.PUDP
+        			Armor.PUDP,
+        			Armor.RDP,
+        			Armor.WDP,
+        			Armor.YDP
             	}, 
             	{
             		Armor.BDB, 
@@ -57,7 +69,10 @@ public class RecipesArmor
         			Armor.GRDB,
         			Armor.ODB,
         			Armor.PDB,
-        			Armor.PUDB
+        			Armor.PUDB,
+        			Armor.RDB,
+        			Armor.WDB,
+        			Armor.YDB
             	}
           };
     }

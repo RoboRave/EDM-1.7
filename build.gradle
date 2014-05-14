@@ -11,7 +11,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT"
+        classpath "net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT"
     }
 }
 
@@ -34,11 +34,12 @@ archivesBaseName = "[${config.version.minecraft}]${config.mod.id}"
 minecraft {
     version = "${config.version.minecraft}-${config.version.forge}"
 
-    if (!project.hasProperty("run_location"))
-        assetDir = "run/assets"
+    if (file('../run').exists()){
+	
+        assetDir = "../run/assets"
     else
-        assetDir = run_location.replace("{modid}", config.mod.id).replace("{mcversion}", config.version.minecraft) + "assets"
-}
+        assetDir =  assetDir = "assets"
+	}
 
 jar {
     appendix = "Client"

@@ -2,7 +2,6 @@ package mods.roborave.edm.items.armor;
 
 import mods.roborave.edm.lib.Strings;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -17,7 +16,6 @@ public class ItemLegs extends ItemArmor
 	public ItemLegs(ArmorMaterial par2EnumArmorMaterial, int par3, String color)
 	{
 		super(par2EnumArmorMaterial, par3, 2);
-		this.setCreativeTab(CreativeTabs.tabCombat);
 		this.color=color;
 	}
 	

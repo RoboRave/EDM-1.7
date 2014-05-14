@@ -49,6 +49,7 @@ public class VersionChecker {
 
 	public static void startVersionCheck() {
 		new Thread("EDM Version Check") {
+			
 			@SuppressWarnings("unchecked")
 			@Override
 			public void run() {

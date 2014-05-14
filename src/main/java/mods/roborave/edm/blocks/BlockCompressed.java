@@ -1,7 +1,7 @@
 package mods.roborave.edm.blocks;
 
+import mods.roborave.edm.EDM;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockCompressed extends BlockCore
 {
@@ -11,7 +11,7 @@ public class BlockCompressed extends BlockCore
     public BlockCompressed(String name)
     {
         super(Material.iron, name);
-        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setCreativeTab(EDM.tabEDMBlock);
     }
 
    

@@ -1,16 +1,15 @@
 package mods.roborave.edm.client;
 
-import mods.roborave.edm.EDM;
 import mods.roborave.edm.common.CommonProxy;
-import mods.roborave.edm.creativetabs.MainTab;
 import mods.roborave.edm.interfaces.IProxy;
+import mods.roborave.edm.tick.VersionTicker;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.common.FMLCommonHandler;
 public class ClientProxy extends CommonProxy implements IProxy
 {
 	public static Item.ToolMaterial Black = EnumHelper.addToolMaterial("Black_D", 3, 1200, 8.0F,  3.0F, 10);
@@ -21,6 +20,8 @@ public class ClientProxy extends CommonProxy implements IProxy
     public static Item.ToolMaterial Pink=   EnumHelper.addToolMaterial("Pink_D",  3, 2200, 18.0F, 13.0F,20);
     public static Item.ToolMaterial Purple= EnumHelper.addToolMaterial("Purple_D",3, 2400, 20.0F, 16.0F,22);
     public static Item.ToolMaterial Red=    EnumHelper.addToolMaterial("Red_D",   3, 2600, 22.0F, 19.0F,24);
+    public static Item.ToolMaterial White=  EnumHelper.addToolMaterial("White_D", 3, 2800, 24.0F, 22.0F,26);
+    public static Item.ToolMaterial Yellow= EnumHelper.addToolMaterial("Yellow_D",3, 3000, 26.0F, 24.0F,28);
     
     public static ArmorMaterial Black_Diamonds = EnumHelper.addArmorMaterial("Black", 30,new int[]  { 1, 6,   4, 1 }, 10);
 	public static ArmorMaterial Blue_Diamonds = EnumHelper.addArmorMaterial("Blue", 35, new int[]   { 3, 8,   6, 3 }, 15);
@@ -29,13 +30,15 @@ public class ClientProxy extends CommonProxy implements IProxy
 	public static ArmorMaterial Orange_Diamonds= EnumHelper.addArmorMaterial("Orange", 50, new int[]{ 9, 14, 12, 9 }, 30);
 	public static ArmorMaterial Pink_Diamonds= EnumHelper.addArmorMaterial("Pink", 55, new int[]    {11, 16, 14,11 }, 35);
 	public static ArmorMaterial Purple_Diamonds= EnumHelper.addArmorMaterial("Purple", 60, new int[]{13, 18, 16,13 }, 40);
+	public static ArmorMaterial Red_Diamonds= EnumHelper.addArmorMaterial("Red", 65, new int[]      {15, 22, 18,15 }, 45);
+	public static ArmorMaterial White_Diamonds= EnumHelper.addArmorMaterial("White", 70, new int[]  {17, 24, 20,17 }, 50);
+	public static ArmorMaterial Yellow_Diamonds= EnumHelper.addArmorMaterial("Yellow", 75, new int[]{19, 26, 22,19 }, 55);
 	
 	@Override
 	public void loadMod() 
 	{
 		super.loadMod();
-		EDM.tabEDMBlock= new MainTab("EDM:Blocks", "Black_diamond_Block");
-		EDM.tabEDMItems= new MainTab("EDM:Items", "Blue_diamond_Block");
+		
 	}
 	
 	@Override
@@ -72,6 +75,7 @@ public class ClientProxy extends CommonProxy implements IProxy
 	public void registerTickers() 
 	{
 		super.registerTickers();
+		FMLCommonHandler.instance().bus().register(new VersionTicker());
 	}
 
     public void announce(String announcement)

@@ -5,7 +5,7 @@ public class Strings {
 
 	public Strings Instance;
 	
-	public static final String MODID = "Extra_diamonds_Mod";
+	public static final String MODID = "Extra_Diamonds_Mod";
 	
 	public static final String MODID(){	return Reference.MODID;	}
 	
