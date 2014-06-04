@@ -74,7 +74,6 @@ public class ClientProxy extends CommonProxy implements IProxy
 	@Override
 	public void registerTickers() 
 	{
-		super.registerTickers();
 		FMLCommonHandler.instance().bus().register(new VersionTicker());
 	}
 

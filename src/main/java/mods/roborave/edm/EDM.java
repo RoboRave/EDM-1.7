@@ -7,7 +7,6 @@ import mods.roborave.edm.helper.LogHandler;
 import mods.roborave.edm.helper.VersionChecker;
 import mods.roborave.edm.init.Blocks;
 import mods.roborave.edm.lib.Strings;
-import mods.roborave.edm.server.command.EDMCommand;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import cpw.mods.fml.common.Mod;
@@ -17,7 +16,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -103,9 +101,6 @@ public class EDM
 		EDM.getVersionConfig().save();
 		
 		proxy.PreInit();
-	//	ModUtils.findMod("Extra_Diamonds_Mod", true, "Test");
-
-		
     }
 	
 	@EventHandler
@@ -127,12 +122,7 @@ public class EDM
 	{
 		proxy.PostInit();
 	}
-	
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent evt)
-	{
-		 evt.registerServerCommand(new EDMCommand(evt.getServer()));
-	}
+
 	
 	public Blocks getBlocks() 
 	{
