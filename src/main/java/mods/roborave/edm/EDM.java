@@ -92,7 +92,7 @@ public class EDM
 		meta.authorList = Arrays.asList("Roborave");
 		meta.modId=Strings.MODID;
 		meta.name=Strings.name;
-		meta.version=Strings.version;
+		meta.version=Strings.Vers;
 		meta.description="EDM";
 		
 		
@@ -103,6 +103,7 @@ public class EDM
 		EDM.getVersionConfig().save();
 		
 		proxy.PreInit();
+	//	ModUtils.findMod("Extra_Diamonds_Mod", true, "Test");
 
 		
     }

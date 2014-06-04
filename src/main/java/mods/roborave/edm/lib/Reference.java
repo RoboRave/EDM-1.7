@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import com.google.common.base.Throwables;
 
 public class Reference {
+	
 	static {
 		Properties prop = new Properties();
 

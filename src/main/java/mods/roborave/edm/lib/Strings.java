@@ -12,8 +12,8 @@ public class Strings {
 	public static final  String name = "extra_diamonds_mod";
 	public String Name(){	return Reference.NAME;	}
 	
-	public static final String version = "3.0.0";
-	public static String Vers(){	return Reference.VERSION; }
+	public static final String version = "3.1.0";
+	public static final String Vers = Reference.VERSION; 
 	
 	public static final String CONFIG_CATEGORY_VERCHECK = "versioncheck";
 

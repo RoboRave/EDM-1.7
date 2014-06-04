@@ -11,115 +11,55 @@ buildscript {
         }
     }
     dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT"
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
 }
 
-apply plugin: "forge"
+apply plugin: 'forge'
 
-ext.configFile = file "build.properties"
-
-configFile.withReader {
-    def prop = new Properties()
-    prop.load(it)
-    ext.config = new ConfigSlurper().parse prop
-}
-
-ext.build = System.getenv().BUILD_NUMBER ?: "dev"
-
-group = "mods.roborave.edm"
-version = "${config.version.major}.${config.version.minor}.${config.version.micro}.${build}"
-archivesBaseName = "[${config.version.minecraft}]${config.mod.id}"
+version = "3.1.0"
+group= "mods.roborave.edm" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "EDM"
 
 minecraft {
-    version = "${config.version.minecraft}-${config.version.forge}"
+    version = "1.7.2-10.12.1.1082"
+    assetDir = "eclipse/assets"
+}
 
-    if (file('../run').exists()){
+dependencies {
 	
-        assetDir = "../run/assets"
-    else
-        assetDir =  assetDir = "assets"
-	}
+    // you may put jars on which you depend on in ./libs
+    // or you may define them like so..
+    //compile "some.group:artifact:version:classifier"
+    //compile "some.group:artifact:version"
+      
+    // real examples
+    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
+    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+//compile 'com.modapi.main:ModAPI:3.0.1'
 
-jar {
-    appendix = "Client"
+    // for more info...
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
 }
 
-processResources {
-    from (sourceSets.main.resources.srcDirs) {
-        include "mcmod.info"
-        include "version.properties"
+processResources
+{
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
 
-        expand (["modid": config.mod.id,
-            "version": version,
-            "mcversion": config.version.minecraft,
-            "forgeversion": config.version.forge
-        ])
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-
-    from (sourceSets.main.resources.srcDirs) {
-        exclude "mcmod.info"
-        exclude "version.properties"
-    }
-}
-
-if (!project.hasProperty("keystore_location"))
-    ext.keystore_location = "."
-
-if (!project.hasProperty("keystore_alias"))
-    ext.keystore_alias = ""
-
-if (!project.hasProperty("keystore_password"))
-    ext.keystore_password = ""
-
-if (!project.hasProperty("release_location"))
-    ext.release_location = "."
-else
-    ext.release_location = release_location.replace("{modid}", config.mod.id).replace("{mcversion}", config.version.minecraft).replace("{version}", version)
-
-task signJar(dependsOn: "reobf") {
-    inputs.file jar.getArchivePath()
-    inputs.file keystore_location
-    inputs.property "keystore_alias", keystore_alias
-    inputs.property "keystore_password", keystore_password
-    outputs.file jar.getArchivePath()
-
-    onlyIf {
-        return keystore_location != "."
-    }
-
-    doLast {
-        ant.signjar(
-            destDir: jar.destinationDir,
-            jar: jar.getArchivePath(),
-            keystore: keystore_location,
-            alias: keystore_alias,
-            storepass: keystore_password
-        )
-    }
-}
-
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    appendix = "universal"
-    classifier = "deobf"
-}
-
-task sourceJar(type: Jar) {
-    from sourceSets.main.allSource
-    appendix = "universal"
-    classifier = "src"
-}
-
-task release(dependsOn: ["sourceJar", "deobfJar", "signJar"], type: Copy) {
-    from project.tasks.jar.destinationDir
-    into project.file(project.release_location)
-
-    eachFile { file ->
-        logger.info "copying ${file}"
-    }
-
-    onlyIf {
-        return project.release_location != "."
+        
+    // copy everything else, thats not the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
     }
 }

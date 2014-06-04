@@ -12,16 +12,16 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 public class ClientProxy extends CommonProxy implements IProxy
 {
-	public static Item.ToolMaterial Black = EnumHelper.addToolMaterial("Black_D", 3, 1200, 8.0F,  3.0F, 10);
-    public static Item.ToolMaterial Blue  = EnumHelper.addToolMaterial("Blue_D",  3, 1400, 10.0F, 5.0F, 12);
-    public static Item.ToolMaterial Gray  = EnumHelper.addToolMaterial("Gray_D",  3, 1600, 12.0F, 7.0F, 14);
-    public static Item.ToolMaterial Green = EnumHelper.addToolMaterial("Green_D", 3, 1800, 14.0F, 9.0F, 16);
-    public static Item.ToolMaterial Orange= EnumHelper.addToolMaterial("Orange_D",3, 2000, 16.0F, 11.0F,18);
-    public static Item.ToolMaterial Pink=   EnumHelper.addToolMaterial("Pink_D",  3, 2200, 18.0F, 13.0F,20);
-    public static Item.ToolMaterial Purple= EnumHelper.addToolMaterial("Purple_D",3, 2400, 20.0F, 16.0F,22);
-    public static Item.ToolMaterial Red=    EnumHelper.addToolMaterial("Red_D",   3, 2600, 22.0F, 19.0F,24);
-    public static Item.ToolMaterial White=  EnumHelper.addToolMaterial("White_D", 3, 2800, 24.0F, 22.0F,26);
-    public static Item.ToolMaterial Yellow= EnumHelper.addToolMaterial("Yellow_D",3, 3000, 26.0F, 24.0F,28);
+	public static Item.ToolMaterial Black = EnumHelper.addToolMaterial("Black_D", 3, 1200, 6.0F,  3.0F, 8);
+    public static Item.ToolMaterial Blue  = EnumHelper.addToolMaterial("Blue_D",  3, 1400, 8.0F,  5.0F, 10);
+    public static Item.ToolMaterial Gray  = EnumHelper.addToolMaterial("Gray_D",  3, 1600, 10.0F, 7.0F, 12);
+    public static Item.ToolMaterial Green = EnumHelper.addToolMaterial("Green_D", 3, 1800, 12.0F, 9.0F, 14);
+    public static Item.ToolMaterial Orange= EnumHelper.addToolMaterial("Orange_D",3, 2000, 14.0F, 11.0F,16);
+    public static Item.ToolMaterial Pink  = EnumHelper.addToolMaterial("Pink_D",  3, 2200, 16.0F, 13.0F,18);
+    public static Item.ToolMaterial Purple= EnumHelper.addToolMaterial("Purple_D",3, 2400, 18.0F, 16.0F,20);
+    public static Item.ToolMaterial Red=    EnumHelper.addToolMaterial("Red_D",   3, 2600, 20.0F, 19.0F,22);
+    public static Item.ToolMaterial White=  EnumHelper.addToolMaterial("White_D", 3, 2800, 22.0F, 22.0F,24);
+    public static Item.ToolMaterial Yellow= EnumHelper.addToolMaterial("Yellow_D",3, 3000, 24.0F, 24.0F,26);
     
     public static ArmorMaterial Black_Diamonds = EnumHelper.addArmorMaterial("Black", 30,new int[]  { 1, 6,   4, 1 }, 10);
 	public static ArmorMaterial Blue_Diamonds = EnumHelper.addArmorMaterial("Blue", 35, new int[]   { 3, 8,   6, 3 }, 15);
