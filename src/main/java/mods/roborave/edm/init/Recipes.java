@@ -2,6 +2,7 @@ package mods.roborave.edm.init;
 
 import mods.roborave.edm.helper.recipes.RecipesArmor;
 import mods.roborave.edm.helper.recipes.RecipesTools;
+import mods.roborave.edm.helper.recipes.SmeltOre;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;

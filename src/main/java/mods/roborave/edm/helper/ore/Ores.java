@@ -18,22 +18,15 @@ public enum Ores {
 	private String _name;
 	private boolean _enabled;
 	private int _harvestLevel;
-	private OreDrops _drops;
-
-	private Ores (int harvestLevel, OreDrops drops) {
+	
+	private Ores(int harvestLevel) {
 		this._name = this.name()+"_diamond_Ore";
 		this._enabled = true;
 		this._harvestLevel = harvestLevel;
-		this._drops = drops;
-	}
-
-	private Ores(int harvestLevel) {
-		this(harvestLevel, OreDrops.ORE);
 	}
 
 	public OreConfig getDefaultConfig() {
-		return new OreConfig(this._name, this._enabled, this._harvestLevel, 
-				this._drops);
+		return new OreConfig(this._name, this._enabled, this._harvestLevel);
 	}
 
 	public boolean enabled() {

@@ -1,5 +1,6 @@
 package mods.roborave.edm.init;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import mods.roborave.edm.EDM;
@@ -14,72 +15,55 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class Items {
+public class Items 
+{
+	
 	private static boolean isInitialized = false;
+	
 	public static HashMap<String , Item> itemList = new HashMap<String , Item>(); 
 
-	public static Item BDPX;
-	public static Item BDAX;
-	public static Item BDSD;
-	public static Item BDSW;
 	
-	public static Item BLDPX;
-	public static Item BLDAX;
-	public static Item BLDSD;
-	public static Item BLDSW;
+	public static Item BDPX, BDAX, BDSD, BDSW;
 	
-	public static Item GDPX;
-	public static Item GDAX;
-	public static Item GDSD;
-	public static Item GDSW;
+	public static Item BLDPX,BLDAX,BLDSD,BLDSW;
 	
-	public static Item GRDPX;
-	public static Item GRDAX;
-	public static Item GRDSD;
-	public static Item GRDSW;
+	public static Item GDPX, GDAX, GDSD, GDSW;
 	
-	public static Item ODPX;
-	public static Item ODAX;
-	public static Item ODSD;
-	public static Item ODSW;
+	public static Item GRDPX, GRDAX, GRDSD, GRDSW;
 	
-	public static Item PDPX;
-	public static Item PDAX;
-	public static Item PDSD;
-	public static Item PDSW;
+	public static Item ODPX, ODAX, ODSD, ODSW;
 	
-	public static Item PUDPX;
-	public static Item PUDAX;
-	public static Item PUDSD;
-	public static Item PUDSW;
+	public static Item PDPX, PDAX, PDSD, PDSW;
 	
-	public static Item RDPX;
-	public static Item RDAX;
-	public static Item RDSD;
-	public static Item RDSW;
+	public static Item PUDPX, PUDAX, PUDSD, PUDSW;
 	
-	public static Item WDPX;
-	public static Item WDAX;
-	public static Item WDSD;
-	public static Item WDSW;
+	public static Item RDPX, RDAX, RDSD, RDSW;
 	
-	public static Item YDPX;
-	public static Item YDAX;
-	public static Item YDSD;
-	public static Item YDSW;
+	public static Item WDPX, WDAX, WDSD, WDSW;
+	
+	public static Item YDPX, YDAX, YDSD, YDSW;
 	
 	public static Item BD;
+	
 	public static Item BLD;
+	
 	public static Item GD;
+	
 	public static Item GRD;
+	
 	public static Item OD;
+	
 	public static Item PD;
+	
 	public static Item PUD;
+	
 	public static Item RD;
+	
 	public static Item WD;
+	
 	public static Item YD;
 	
-	
+	public static ArrayList<Item> set;
 	
 	public static void init() 
 	{
@@ -102,8 +86,6 @@ public class Items {
 			RD =new ItemCore("Item_Red_diamond").setCreativeTab(EDM.tabEDMItems);
 			WD =new ItemCore("Item_White_diamond").setCreativeTab(EDM.tabEDMItems);
 			YD =new ItemCore("Item_Yellow_diamond").setCreativeTab(EDM.tabEDMItems);
-			
-			// new ItemSpecial("wip").onUse(Blocks.getBlock("Black_diamond_Block"));
 			
 			//Tools
 			EDM.Instance.getLogger().info("Initializing Tools");
@@ -167,118 +149,75 @@ public class Items {
 	        YDAX = new ItemAxeMain(ClientProxy.Yellow,"Yellow_Diamond_Axe").setCreativeTab(CreativeTabs.tabTools);
 	        YDSD = new ItemSpadeMain(ClientProxy.Yellow,"Yellow_Diamond_Shovel").setCreativeTab(CreativeTabs.tabTools);
 	        YDSW = new ItemSwordMain(ClientProxy.White,"Yellow_Diamond_Sword").setCreativeTab(CreativeTabs.tabCombat);
-		
-	        registerItem(BDPX);
-	        registerItem(BDAX);
-	        registerItem(BDSD);
-	        registerItem(BDSW);
+	        
+	        registerToolSet(BDPX, BDAX, BDSD, BDSW);
 
-	        registerItem(BLDPX);
-	        registerItem(BLDAX);
-	        registerItem(BLDSD);
-	        registerItem(BLDSW);
+	        registerToolSet(BLDPX, BLDAX, BLDSD, BLDSW);
 	        
-	        registerItem(GDPX);
-	        registerItem(GDAX);
-	        registerItem(GDSD);
-	        registerItem(GDSW);
+	        registerToolSet(GDPX, GDAX, GDSD, GDSW);
 	        
-	        registerItem(GRDPX);
-	        registerItem(GRDAX);
-	        registerItem(GRDSD);
-	        registerItem(GRDSW);
+	        registerToolSet(GRDPX, GRDAX, GRDSD, GRDSW);
 	        
-	        registerItem(ODPX);
-	        registerItem(ODAX);
-	        registerItem(ODSD);
-	        registerItem(ODSW);
+	        registerToolSet(ODPX, ODAX, ODSD, ODSW);
 	        
-	        registerItem(PDPX);
-	        registerItem(PDAX);
-	        registerItem(PDSD);
-	        registerItem(PDSW);
+	        registerToolSet(PDPX, PDAX, PDSD, PDSW);
 	        
-	        registerItem(PUDPX);
-	        registerItem(PUDAX);
-	        registerItem(PUDSD);
-	        registerItem(PUDSW);
+	        registerToolSet(PUDPX, PUDAX, PUDSD, PUDSW);
 	        
-	        registerItem(RDPX);
-	        registerItem(RDAX);
-	        registerItem(RDSD);
-	        registerItem(RDSW);
+	        registerToolSet(RDPX, RDAX, RDSD, RDSW);
 	        
-	        registerItem(WDPX);
-	        registerItem(WDAX);
-	        registerItem(WDSD);
-	        registerItem(WDSW);
+	        registerToolSet(WDPX, WDAX, WDSD, WDSW);
+	       
+	        registerToolSet(YDPX, YDAX, YDSD, YDSW);
 	        
-	        registerItem(YDPX);
-	        registerItem(YDAX);
-	        registerItem(YDSD);
-	        registerItem(YDSW);
-	        
-	        Items.itemList.put(BDPX.getUnlocalizedName(), BDPX);
-	        Items.itemList.put(BDAX.getUnlocalizedName(), BDAX);
-	        Items.itemList.put(BDSD.getUnlocalizedName(), BDSD);
-	        Items.itemList.put(BDSW.getUnlocalizedName(), BDSW);
-	        
-	        Items.itemList.put(BLDPX.getUnlocalizedName(), BLDPX);
-	        Items.itemList.put(BLDAX.getUnlocalizedName(), BLDAX);
-	        Items.itemList.put(BLDSD.getUnlocalizedName(), BLDSD);
-	        Items.itemList.put(BLDSW.getUnlocalizedName(), BLDSW);
-	        
-	        Items.itemList.put(GDPX.getUnlocalizedName(), GDPX);
-	        Items.itemList.put(GDAX.getUnlocalizedName(), GDAX);
-	        Items.itemList.put(GDSD.getUnlocalizedName(), GDSD);
-	        Items.itemList.put(GDSW.getUnlocalizedName(), GDSW);
-	        
-	        Items.itemList.put(GRDPX.getUnlocalizedName(), GRDPX);
-	        Items.itemList.put(GRDAX.getUnlocalizedName(), GRDAX);
-	        Items.itemList.put(GRDSD.getUnlocalizedName(), GRDSD);
-	        Items.itemList.put(GRDSW.getUnlocalizedName(), GRDSW);
-	        
-	        Items.itemList.put(ODPX.getUnlocalizedName(), ODPX);
-	        Items.itemList.put(ODAX.getUnlocalizedName(), ODAX);
-	        Items.itemList.put(ODSD.getUnlocalizedName(), ODSD);
-	        Items.itemList.put(ODSW.getUnlocalizedName(), ODSW);
-	        
-	        Items.itemList.put(PDPX.getUnlocalizedName(), PDPX);
-	        Items.itemList.put(PDAX.getUnlocalizedName(), PDAX);
-	        Items.itemList.put(PDSD.getUnlocalizedName(), PDSD);
-	        Items.itemList.put(PDSW.getUnlocalizedName(), PDSW);
+	        putToolSet(BDPX, BDAX, BDSD, BDSW);
 
-	        Items.itemList.put(PDPX.getUnlocalizedName(), PUDPX);
-	        Items.itemList.put(PDAX.getUnlocalizedName(), PUDAX);
-	        Items.itemList.put(PDSD.getUnlocalizedName(), PUDSD);
-	        Items.itemList.put(PDSW.getUnlocalizedName(), PUDSW);
+	        putToolSet(BLDPX, BLDAX, BLDSD, BLDSW);
 	        
-	        Items.itemList.put(PDPX.getUnlocalizedName(), RDPX);
-	        Items.itemList.put(PDAX.getUnlocalizedName(), RDAX);
-	        Items.itemList.put(PDSD.getUnlocalizedName(), RDSD);
-	        Items.itemList.put(PDSW.getUnlocalizedName(), RDSW);
+	        putToolSet(GDPX, GDAX, GDSD, GDSW);
 	        
-	        Items.itemList.put(PDPX.getUnlocalizedName(), WDPX);
-	        Items.itemList.put(PDAX.getUnlocalizedName(), WDAX);
-	        Items.itemList.put(PDSD.getUnlocalizedName(), WDSD);
-	        Items.itemList.put(PDSW.getUnlocalizedName(), WDSW);
-
-	        Items.itemList.put(YDPX.getUnlocalizedName(), YDPX);
-	        Items.itemList.put(YDAX.getUnlocalizedName(), YDAX);
-	        Items.itemList.put(YDSD.getUnlocalizedName(), YDSD);
-	        Items.itemList.put(YDSW.getUnlocalizedName(), YDSW);
+	        putToolSet(GRDPX, GRDAX, GRDSD, GRDSW);
+	        
+	        putToolSet(ODPX, ODAX, ODSD, ODSW);
+	        
+	      	putToolSet(PDPX, PDAX, PDSD, PDSW);
+	        
+	      	putToolSet(PUDPX, PUDAX, PUDSD, PUDSW);
+	        
+	      	putToolSet(RDPX, RDAX, RDSD, RDSW);
+	        
+	      
+	      	putToolSet(WDPX, WDAX, WDSD, WDSW);
+	       
+	      	putToolSet(YDPX, YDAX, YDSD, YDSW);
 
 			isInitialized = true;
 			}
 		    
 	}
+	public static void registerToolSet(Item pick, Item axe, Item spade, Item sword)
+    {
+        GameRegistry.registerItem(pick, pick.getUnlocalizedName(),Strings.MODID());
+        GameRegistry.registerItem(axe, axe.getUnlocalizedName(),Strings.MODID());
+        GameRegistry.registerItem(spade, spade.getUnlocalizedName(),Strings.MODID());
+        GameRegistry.registerItem(sword, sword.getUnlocalizedName(),Strings.MODID());
+    }
 	
-	public static void registerItem(Item item)
-	{
-		GameRegistry.registerItem(item, item.getUnlocalizedName(), Strings.MODID);
-	}
+	public static void putToolSet(Item pick, Item axe,Item spade, Item sword)
+    {
+        Items.itemList.put(pick.getUnlocalizedName(), pick);
+        Items.itemList.put(axe.getUnlocalizedName(),axe);
+        Items.itemList.put(spade.getUnlocalizedName(),spade);
+        Items.itemList.put(sword.getUnlocalizedName(),sword);
+    }
+	
 	public static Item get(String itemName) 
 	{
 		return (Item)itemList.get(itemName);
+	}
+	
+	public static void registerItem(Item item) 
+	{
+		GameRegistry.registerItem(item, item.getUnlocalizedName(), Strings.MODID);
 	}
 }

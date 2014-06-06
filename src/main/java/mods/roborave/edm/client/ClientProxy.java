@@ -10,8 +10,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
+
 public class ClientProxy extends CommonProxy implements IProxy
 {
+
 	public static Item.ToolMaterial Black = EnumHelper.addToolMaterial("Black_D", 3, 1200, 6.0F,  3.0F, 8);
     public static Item.ToolMaterial Blue  = EnumHelper.addToolMaterial("Blue_D",  3, 1400, 8.0F,  5.0F, 10);
     public static Item.ToolMaterial Gray  = EnumHelper.addToolMaterial("Gray_D",  3, 1600, 10.0F, 7.0F, 12);
@@ -35,19 +37,6 @@ public class ClientProxy extends CommonProxy implements IProxy
 	public static ArmorMaterial Yellow_Diamonds= EnumHelper.addArmorMaterial("Yellow", 75, new int[]{19, 26, 22,19 }, 55);
 	
 	@Override
-	public void loadMod() 
-	{
-		super.loadMod();
-		
-	}
-	
-	@Override
-	public void load()
-	{
-		super.load();
-	}
-	
-	@Override
 	public void PreInit()
 	{
 		super.PreInit();
@@ -60,11 +49,6 @@ public class ClientProxy extends CommonProxy implements IProxy
 		super.Init();
 	}
 	
-	@Override
-	public void PostInit() 
-	{
-		super.PostInit();
-	}
 	@Override
     public World getClientWorld()
     {

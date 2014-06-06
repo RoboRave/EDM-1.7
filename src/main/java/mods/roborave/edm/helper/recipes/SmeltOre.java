@@ -1,5 +1,7 @@
-package mods.roborave.edm.init;
+package mods.roborave.edm.helper.recipes;
 
+import mods.roborave.edm.init.Blocks;
+import mods.roborave.edm.init.Items;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 

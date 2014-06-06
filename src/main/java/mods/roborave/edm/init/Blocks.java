@@ -5,11 +5,9 @@ import java.util.HashMap;
 import mods.roborave.edm.EDM;
 import mods.roborave.edm.blocks.BlockCompressed;
 import mods.roborave.edm.blocks.BlockOre;
-import mods.roborave.edm.blocks.BlockRender;
 import mods.roborave.edm.helper.ore.Ores;
 import mods.roborave.edm.helper.worldgen.OreConfig;
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 
 import org.apache.logging.log4j.Level;
 
@@ -32,8 +30,8 @@ public class Blocks
 		if (isInitialized) 
 		{
 			EDM.Instance.getLogger().info("Block initialization failed, already initialized");
-			return;
-		}
+			
+		}else{
 		
 		EDM.Instance.getLogger().log(Level.INFO,"Initializing Blocks");
 		
@@ -41,13 +39,14 @@ public class Blocks
 			OreConfig oreConfig = ore.getDefaultConfig();
 				new BlockOre(oreConfig);
 		}
+		
 		for (Ores ore : Ores.values()) 
 		{
 				new BlockCompressed(ore+"_diamond_Block");
 		}
 
-		 new BlockRender("TestSword").setCreativeTab(CreativeTabs.tabBlock);
 		isInitialized = true;
+		}
 	}
 	
 	public static Block getBlock(String blockName) 

@@ -23,15 +23,16 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class EDM
 {
-	
-	
 	@SidedProxy
 	(
 			clientSide="mods.roborave.edm.client.ClientProxy",
 			serverSide="mods.roborave.edm.common.CommonProxy"
 	)
-	public static CommonProxy proxy;
 	
+	public static CommonProxy proxy;
+	/**
+	 * Minecraft's actual version
+	 */
 	public String acutalMCversion= "1.7.2";
 	
 	private Blocks blocks;
@@ -61,7 +62,7 @@ public class EDM
 			return Item.getItemFromBlock(Blocks.getBlock("Gray_diamond_Block"));
 		}
 	};
-	private static Config VersionConfig;
+	public static Config VersionConfig;
 	
 	public LogHandler logger = new LogHandler();
 	
@@ -76,11 +77,6 @@ public class EDM
 
 	public static int ticker;
 	
-	//public static final Block testBlock=(new BlockTest("Test",TileEntityBlock.class).setCreativeTab(CreativeTabs.tabBlock));
-	
-	//public static final Item test = new ItemTest(testBlock, "test").setUnlocalizedName("test").setCreativeTab(CreativeTabs.tabMaterials);
-
-
 	@Mod.EventHandler
 	public void PreInit(FMLPreInitializationEvent event)
 	{
@@ -113,14 +109,13 @@ public class EDM
 
 		proxy.registerTickers();
 		proxy.Init();
-		proxy.loadMod();
 	
 	}
 	
 	@EventHandler
 	public void PostInit(FMLPostInitializationEvent event)
 	{
-		proxy.PostInit();
+		
 	}
 
 	

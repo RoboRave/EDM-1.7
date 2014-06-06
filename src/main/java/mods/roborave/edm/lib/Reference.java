@@ -32,7 +32,6 @@ public class Reference {
 	public static final String MINECRAFT;
 	public static final String PROXY_COMMON = "com.github.lunatrius.core.CommonProxy";
 	public static final String PROXY_CLIENT = "com.github.lunatrius.core.client.ClientProxy";
-
-	public static Logger logger = null;
 	
+	public static Logger logger = null;
 }

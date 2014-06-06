@@ -23,8 +23,6 @@ public class RetroGenerationManager implements IWorldGenerator {
 		case 1:
 			generateEnd(random, chunkX * 16, chunkZ * 16, world);
 			break;
-		default:
-			;
 		}
 
 	}
