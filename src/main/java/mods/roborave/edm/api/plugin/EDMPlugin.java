@@ -8,14 +8,15 @@ import mods.common.addon.plugin.common.Info;
  * @author Zach
  *
  */
-@Info(name = "EDM", version = "3.1.2")
+@Info(name = "EDM", version = "3.1.5")
 public class EDMPlugin implements Plugin
 {
 
 	@Override
 	public void preInit()
 	{
-		
+	//TODO fix this 
+	//McLogger
 	}
 
 	@Override
